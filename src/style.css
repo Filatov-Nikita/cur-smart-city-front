@@ -1,0 +1,32 @@
+@font-face {
+  font-family: 'Din pro';
+  src: url('./assets/fonts/din-pro/DINPro-Bold.woff2'),
+    url('./assets/fonts/din-pro/DINPro-Bold.woff');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Din pro';
+  src: url('./assets/fonts/din-pro/DINPro-Medium.woff2'),
+    url('./assets/fonts/din-pro/DINPro-Medium.woff');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Din pro';
+  src: url('./assets/fonts/din-pro/DINPro-Light.woff2'),
+    url('./assets/fonts/din-pro/DINPro-Light.woff');
+  font-weight: 300;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-size: 100%;
+    background: #003039;
+    @apply tw-font-din;
+  }
+}
