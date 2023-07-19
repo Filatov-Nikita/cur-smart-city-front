@@ -5,4 +5,12 @@ export const useAppStore = defineStore('appStore',  {
     branch: null,
     district: null
   }),
+  actions: {
+    setBranch(branch) {
+      this.branch = branch;
+    },
+    setDistrict(district) {
+      this.district = district;
+    }
+  }
 });
