@@ -101,10 +101,22 @@ export const useTabNavigation = () => {
     });
   }
 
+  function resetNav() {
+    tabRowIndex.value = 0;
+    tabColIndex.value = 0;
+  }
+
+  function setNav(row, col) {
+    tabRowIndex.value = row;
+    tabColIndex.value = col;
+  }
+
   provide('tablist', tablist);
   provide('tabCurrent', tabCurrent);
   provide('setTab', setTab);
   provide('removeTab', removeTab);
+  provide('resetNav', resetNav);
+  provide('setNav', setNav);
 
   window.left = left;
   window.right = right;

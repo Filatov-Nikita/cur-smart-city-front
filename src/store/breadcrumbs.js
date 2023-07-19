@@ -3,6 +3,8 @@ import { defineStore } from 'pinia';
 export const useBreadcrumbsStore = defineStore('breadcrumbsStore',  {
   state: () => ({
     items: [],
+    prevItems: [],
+    freezen: false
   }),
   getters: {
     list() {
@@ -24,7 +26,12 @@ export const useBreadcrumbsStore = defineStore('breadcrumbsStore',  {
     }
   },
   actions: {
+    freeze(val = true) {
+      this.freezen = val;
+    },
     set(...list) {
+      if(this.freezen) return;
+      this.prevItems = [...this.items];
       this.items = [...list];
     },
     append(...list) {
@@ -41,6 +48,10 @@ export const useBreadcrumbsStore = defineStore('breadcrumbsStore',  {
           children: [ ...(this.items[ind]?.children ?? []), child  ]
         };
       }
+    },
+    restore() {
+      this.set(...this.prevItems);
+      this.prevItems = [];
     },
     back() {
       const newItems = [...this.items];

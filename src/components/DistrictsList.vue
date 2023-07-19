@@ -4,8 +4,14 @@
       <MainLayout>
         <div class="rows">
           <div class="cols" v-for="(row, rowInd) in rows">
-            <Tappable namespace="districts" v-for="(area, colInd) in row" :row="rowInd" :col="colInd" v-slot="{ isCurrent }">
-              <DistrictItem :name="area.name" :icon="`districts-icon_${area.id}`" :active="isCurrent" />
+            <Tappable v-for="(area, colInd) in row" :row="rowInd - 1000" :col="colInd" v-slot="{ isCurrent }" @ok="go(area.id)">
+              <DistrictItem
+                :ref="setRef(area.id)"
+                :path="`/branches/building/${area.id}`"
+                :icon="`districts-icon_${area.id}`"
+                :name="area.name"
+                :active="isCurrent"
+              />
             </Tappable>
           </div>
         </div>
@@ -15,12 +21,17 @@
 </template>
 
 <script setup>
-  import { computed, ref } from 'vue';
+  import { computed, inject, ref, watch } from 'vue';
   import MainLayout from '../layouts/MainLayout.vue';
   import DistrictItem from './DistrictItem.vue';
   import { useDistrictsStore } from '../store/districts';
+  import { useBreadcrumbsStore } from '../store/breadcrumbs';
 
+  const bS = useBreadcrumbsStore();
   const districtsStore = useDistrictsStore();
+
+  const setNav = inject('setNav');
+  const resetNav = inject('resetNav');
 
   const list = computed(() => districtsStore.districts);
 
@@ -40,7 +51,44 @@
     return rows;
   });
 
-  const show = ref(true);
+  const show = ref(false);
+
+  const refs = {};
+
+  function go(areaId) {
+    if(refs[areaId] && refs[areaId].go) {
+      refs[areaId].go();
+      hide();
+    }
+  }
+
+  function hide() {
+    show.value = false;
+  }
+
+  function toggle() {
+    show.value = !show.value;
+  }
+
+  window.toggle = toggle;
+
+  function setRef(areaId) {
+    return (e) => {
+      refs[areaId] = e;
+    }
+  }
+
+  watch(show, (val) => {
+    if(val) {
+      bS.set('Выбрать район');
+      bS.freeze();
+      setNav(-1000, 0);
+    } else {
+      bS.freeze(false);
+      bS.restore();
+      resetNav();
+    }
+  }, { immediate: true });
 </script>
 <style scoped>
   .districts-list {
@@ -68,7 +116,7 @@
   }
 
   .rows {
-    padding: 8.4rem 20.18rem 0;
+    padding: 8.4rem 19.5rem 0;
   }
 
   .cols {
@@ -77,7 +125,7 @@
   }
 
   .cols:nth-child(2n) {
-    margin-left: 9.1rem;
+    margin-left: 9.2rem;
   }
 
   .cols:not(:first-child) {
