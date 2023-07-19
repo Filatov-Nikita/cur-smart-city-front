@@ -4,6 +4,9 @@
       <Header />
     </div>
     <slot />
+    <div class="footer-zone">
+      <slot name="footer" />
+    </div>
   </div>
 </template>
 
@@ -43,5 +46,11 @@
 
   .main-layout-header {
     padding: 3.6rem 10rem 0;
+  }
+
+  .footer-zone {
+    position: absolute;
+    bottom: 0;
+    @apply tw-inset-x-0
   }
 </style>

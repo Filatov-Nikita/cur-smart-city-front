@@ -7,7 +7,7 @@
             <Tappable v-for="(area, colInd) in row" :row="rowInd - 1000" :col="colInd" v-slot="{ isCurrent }" @ok="go(area.id)">
               <DistrictItem
                 :ref="setRef(area.id)"
-                :path="`/branches/building/${area.id}`"
+                :path="pathToBranch(area.id)"
                 :icon="`districts-icon_${area.id}`"
                 :name="area.name"
                 :active="isCurrent"
@@ -26,14 +26,24 @@
   import DistrictItem from './DistrictItem.vue';
   import { useDistrictsStore } from '../store/districts';
   import { useBreadcrumbsStore } from '../store/breadcrumbs';
+  import { useAppStore } from '../store/app';
 
-  const bS = useBreadcrumbsStore();
+
+  const breadcrumbsStore = useBreadcrumbsStore();
   const districtsStore = useDistrictsStore();
+  const appStore = useAppStore();
 
   const setNav = inject('setNav');
   const resetNav = inject('resetNav');
 
   const list = computed(() => districtsStore.districts);
+
+  const pathToBranch = computed(() => {
+    return (areaId) => {
+      if(appStore.branch === null) return '/';
+      return `/branches/${appStore.branch}/${areaId}`;
+    }
+  });
 
   const rows = computed(() => {
     const rows = [];
@@ -51,7 +61,9 @@
     return rows;
   });
 
-  const show = ref(false);
+  const show = computed(() => {
+    return appStore.showAreas;
+  });
 
   const refs = {};
 
@@ -63,14 +75,10 @@
   }
 
   function hide() {
-    show.value = false;
+    appStore.showAreas = false;
   }
 
-  function toggle() {
-    show.value = !show.value;
-  }
-
-  window.toggle = toggle;
+  window.toggle = appStore.toggleAreas;
 
   function setRef(areaId) {
     return (e) => {
@@ -80,12 +88,12 @@
 
   watch(show, (val) => {
     if(val) {
-      bS.set('Выбрать район');
-      bS.freeze();
+      breadcrumbsStore.set('Выбрать район');
+      breadcrumbsStore.freeze();
       setNav(-1000, 0);
     } else {
-      bS.freeze(false);
-      bS.restore();
+      breadcrumbsStore.freeze(false);
+      breadcrumbsStore.restore();
       resetNav();
     }
   }, { immediate: true });

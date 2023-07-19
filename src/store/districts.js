@@ -1,11 +1,21 @@
 import { defineStore } from 'pinia';
+import { useAppStore } from '../store/app';
 
 export const useDistrictsStore = defineStore('districtsStore',  {
   state: () => ({
     districts: getDistricts(),
   }),
+  getters: {
+    current() {
+      const appStore = useAppStore();
+      const areaId = appStore.district;
+      if(!areaId || areaId === 0) return null;
+      const area = this.districts.find(area => area.id === areaId);
+      if(!area) return null;
+      return area;
+    }
+  },
 });
-
 
 function getDistricts() {
     return [
