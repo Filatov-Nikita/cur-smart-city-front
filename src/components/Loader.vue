@@ -11,7 +11,7 @@
 <script setup>
   import { ref } from 'vue';
 
-  const show = ref(import.meta.env.PROD);
+  const show = ref(true || import.meta.env.PROD);
 
   function hide() {
     show.value = false;
@@ -23,7 +23,7 @@
 <style scoped>
   .loader {
     position: fixed;
-    z-index: 9000;
+    z-index: 9900;
     left: 0;
     top: 0;
     width: 100vw;
@@ -32,7 +32,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    @apply tw-bg-primary;
+    background-color: #00758F;
   }
 
   .logo {

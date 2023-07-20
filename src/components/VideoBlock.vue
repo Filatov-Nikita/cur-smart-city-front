@@ -17,8 +17,6 @@
       videoRef.value?.pause();
     }
   }
-
-  console.log(1);
 </script>
 
 <style scoped>

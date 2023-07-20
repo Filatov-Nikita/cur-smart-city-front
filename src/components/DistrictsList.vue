@@ -1,7 +1,6 @@
 <template>
   <transition name="fade">
     <div v-show="show" class="districts-list">
-      <MainLayout>
         <div class="rows">
           <div class="cols" v-for="row in rows">
             <DistrictItem
@@ -9,18 +8,15 @@
               :path="pathToBranch(area.id)"
               :icon="`districts-icon_${area.id}`"
               :name="area.name"
-              :active="false"
             />
           </div>
         </div>
-      </MainLayout>
     </div>
   </transition>
 </template>
 
 <script setup>
   import { computed, watch } from 'vue';
-  import MainLayout from '../layouts/MainLayout.vue';
   import DistrictItem from './DistrictItem.vue';
   import { useDistrictsStore } from '../store/districts';
   import { useBreadcrumbsStore } from '../store/breadcrumbs';
@@ -79,14 +75,11 @@
 </script>
 <style scoped>
   .districts-list {
-    width: 100vw;
-    height: 100vh;
     overflow: hidden;
-    position: fixed;
+    position: absolute;
     z-index: 8000;
-    left: 0;
-    top: 0;
-    @apply tw-bg-primary;
+    background-color: #00758F;
+    @apply tw-inset-0;
   }
 
   .fade-enter-from {
@@ -103,19 +96,19 @@
   }
 
   .rows {
-    padding: 8.4rem 19.5rem 0;
+    padding: 15.12rem 0 0 14rem;
   }
 
   .cols {
     display: flex;
-    gap: 0.95rem;
+    gap: 0.55rem;
   }
 
   .cols:nth-child(2n) {
-    margin-left: 9.2rem;
+    margin-left: 5.5rem;
   }
 
   .cols:not(:first-child) {
-    margin-top: -4.2rem;
+    margin-top: -2.5rem;
   }
 </style>

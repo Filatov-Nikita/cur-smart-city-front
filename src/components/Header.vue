@@ -22,8 +22,7 @@
     justify-content: space-between;
     padding: 1.5rem 2rem;
     border-radius: 1.5rem;
-    background: rgba(34, 69, 79, 0.48);
-    mix-blend-mode: hard-light;
+    background: rgba(22, 62, 87, 0.48);
   }
 
   .logo {
