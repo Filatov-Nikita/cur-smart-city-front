@@ -35,18 +35,18 @@
   .today {
     display: flex;
     align-items: center;
-    gap: 2.25rem;
+    gap: 1.5rem;
   }
 
   .today::before {
     content: "";
-    width: 1.875rem;
-    height: 1.875rem;
+    width: 1.5rem;
+    height: 1.5rem;
     @apply tw-bg-blue tw-rounded-full;
   }
 
   .today-date {
-    font-size: 3rem;
+    font-size: 1.5rem;
     font-weight: 500;
     line-height: 1;
     @apply tw-text-white;

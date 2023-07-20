@@ -27,14 +27,14 @@
 <style scoped>
   .breadcrumbs {
     display: flex;
-    gap: 4rem;
+    gap: 3rem;
   }
 
   .item {
     display: flex;
     align-items: center;
-    font-size: 4rem;
-    font-weight: 700;
+    font-size: 2.5rem;
+    font-weight: 500;
     line-height: 1.2;
     letter-spacing: -0.125rem;
     @apply tw-text-white;
@@ -52,8 +52,8 @@
   }
 
   .icon {
-    width: 4.5rem;
-    height: 4.5rem;
-    margin-right: 2.25rem;
+    width: 3rem;
+    height: 4rem;
+    margin-right: 2rem;
   }
 </style>

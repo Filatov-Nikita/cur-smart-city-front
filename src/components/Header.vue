@@ -20,20 +20,20 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 3rem;
-    border-radius: 2.25rem;
-    background: radial-gradient(468.70% 70.89% at 0.00% 100.00%, rgba(19, 50, 58, 0.86) 0%, rgba(34, 69, 79, 0.84) 46.88%, rgba(34, 69, 79, 0.46) 100%);
+    padding: 1.5rem 2rem;
+    border-radius: 1.5rem;
+    background: rgba(34, 69, 79, 0.48);
     mix-blend-mode: hard-light;
   }
 
   .logo {
-    width: 25.875rem;
+    width: 16.3125rem;
   }
 
 
   .header-left {
     display: flex;
     align-items: center;
-    gap: 4rem;
+    gap: 3rem;
   }
 </style>

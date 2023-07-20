@@ -1,6 +1,8 @@
 <template>
   <div class="main-layout">
-    <VideoBlock class="left-video" />
+    <div class="left-video">
+      <VideoBlock />
+    </div>
     <div class="wrapper">
       <div class="main-layout-header">
         <Header />
@@ -9,7 +11,9 @@
         <slot />
       </main>
     </div>
-    <VideoBlock class="right-video" />
+    <div class="right-video">
+      <VideoBlock />
+    </div>
     <div class="footer-zone">
       <slot name="footer" />
     </div>
@@ -37,11 +41,19 @@
     @apply tw-inset-x-0
   }
 
-  .left-video {
+  .left-video, .right-video {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 86.19rem;
+    height: 48.5rem;
+  }
 
+  .left-video {
+    left: 3.88rem;
   }
 
   .right-video {
-
+    right: 3.88rem;
   }
 </style>
