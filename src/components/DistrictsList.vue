@@ -3,16 +3,14 @@
     <div v-show="show" class="districts-list">
       <MainLayout>
         <div class="rows">
-          <div class="cols" v-for="(row, rowInd) in rows">
-            <Tappable v-for="(area, colInd) in row" :row="rowInd - 1000" :col="colInd" v-slot="{ isCurrent }" @ok="go(area.id)">
-              <DistrictItem
-                :ref="setRef(area.id)"
-                :path="pathToBranch(area.id)"
-                :icon="`districts-icon_${area.id}`"
-                :name="area.name"
-                :active="isCurrent"
-              />
-            </Tappable>
+          <div class="cols" v-for="row in rows">
+            <DistrictItem
+              v-for="area in row"
+              :path="pathToBranch(area.id)"
+              :icon="`districts-icon_${area.id}`"
+              :name="area.name"
+              :active="false"
+            />
           </div>
         </div>
       </MainLayout>
@@ -21,7 +19,7 @@
 </template>
 
 <script setup>
-  import { computed, inject, ref, watch } from 'vue';
+  import { computed, watch } from 'vue';
   import MainLayout from '../layouts/MainLayout.vue';
   import DistrictItem from './DistrictItem.vue';
   import { useDistrictsStore } from '../store/districts';
@@ -32,9 +30,6 @@
   const breadcrumbsStore = useBreadcrumbsStore();
   const districtsStore = useDistrictsStore();
   const appStore = useAppStore();
-
-  const setNav = inject('setNav');
-  const resetNav = inject('resetNav');
 
   const list = computed(() => districtsStore.districts);
 
@@ -65,36 +60,20 @@
     return appStore.showAreas;
   });
 
-  const refs = {};
-
-  function go(areaId) {
-    if(refs[areaId] && refs[areaId].go) {
-      refs[areaId].go();
-      hide();
-    }
-  }
-
   function hide() {
     appStore.showAreas = false;
   }
 
   window.toggle = appStore.toggleAreas;
 
-  function setRef(areaId) {
-    return (e) => {
-      refs[areaId] = e;
-    }
-  }
 
   watch(show, (val) => {
     if(val) {
       breadcrumbsStore.set('Выбрать район');
       breadcrumbsStore.freeze();
-      setNav(-1000, 0);
     } else {
       breadcrumbsStore.freeze(false);
       breadcrumbsStore.restore();
-      resetNav();
     }
   }, { immediate: true });
 </script>

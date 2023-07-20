@@ -26,7 +26,14 @@
 @layer base {
   body {
     font-size: 100%;
-    background: #003039;
+    background: #00758F;
     @apply tw-font-din;
+  }
+}
+
+@layer components {
+  .wrapper {
+    max-width: 149.375rem;
+    margin: 0 auto;
   }
 }

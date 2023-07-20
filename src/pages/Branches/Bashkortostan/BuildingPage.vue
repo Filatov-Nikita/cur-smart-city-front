@@ -1,18 +1,11 @@
 <template>
-  <MainLayout>
-    <PageContent :mapData="{ 1: { color: 'black' }, 2: { color: 'red' } }">
-      <TableBuilding />
-    </PageContent>
-    <template #footer>
-      <Footer />
-    </template>
-  </MainLayout>
+  <PageContent :mapData="{ 1: { color: 'black' }, 2: { color: 'red' } }">
+    <TableBuilding />
+  </PageContent>
 </template>
 
 <script setup>
-  import MainLayout from '../../../layouts/MainLayout.vue';
   import PageContent from '../../../components/PageContent.vue';
-  import Footer from '../../../components/Footer.vue';
   import TableBuilding from '../../../components/Tables/Bashkorrtostan/TableBuilding.vue';
   import { useBreadcrumbsStore } from '../../../store/breadcrumbs';
   import { inject, onUnmounted } from 'vue';

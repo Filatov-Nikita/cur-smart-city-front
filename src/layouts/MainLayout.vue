@@ -1,9 +1,15 @@
 <template>
   <div class="main-layout">
-    <div class="main-layout-header">
-      <Header />
+    <VideoBlock class="left-video" />
+    <div class="wrapper">
+      <div class="main-layout-header">
+        <Header />
+      </div>
+      <main>
+        <slot />
+      </main>
     </div>
-    <slot />
+    <VideoBlock class="right-video" />
     <div class="footer-zone">
       <slot name="footer" />
     </div>
@@ -12,36 +18,13 @@
 
 <script setup>
   import Header from '../components/Header.vue';
+  import VideoBlock from '../components/VideoBlock.vue';
 </script>
 <style scoped>
   .main-layout {
     position: relative;
     height: 100vh;
     overflow: hidden;
-  }
-
-  .main-layout::before {
-    content: "";
-    width: 110rem;
-    height: 135rem;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    background-image: url(../assets/images/left.svg);
-    background-size: cover;
-    z-index: -1;
-  }
-
-  .main-layout::after {
-    content: "";
-    width: 212.5rem;
-    height: 135rem;
-    position: absolute;
-    right: 0;
-    top: 0;
-    background-image: url(../assets/images/right.svg);
-    background-size: cover;
-    z-index: -1;
   }
 
   .main-layout-header {
@@ -52,5 +35,13 @@
     position: absolute;
     bottom: 0;
     @apply tw-inset-x-0
+  }
+
+  .left-video {
+
+  }
+
+  .right-video {
+
   }
 </style>
