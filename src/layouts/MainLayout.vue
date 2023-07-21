@@ -15,15 +15,14 @@
         <main class="main-page">
           <slot />
         </main>
+
+        <div class="footer-zone" id="footer"></div>
       </div>
     </div>
 
     <div class="right-video">
       <VideoBlock />
     </div>
-    <!-- <div class="footer-zone">
-      <slot name="footer" />
-    </div> -->
   </div>
 </template>
 
@@ -50,15 +49,11 @@
     width: 100%;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: auto 1fr;
+    grid-template-rows: auto 1fr auto;
     position: relative;
   }
 
-  .footer-zone {
-    position: absolute;
-    bottom: 0;
-    @apply tw-inset-x-0
-  }
+  .footer-zone {}
 
   .left-video, .right-video {
     position: absolute;
@@ -66,6 +61,7 @@
     transform: translateY(-50%);
     width: 86.19rem;
     height: 48.5rem;
+    z-index: -1;
   }
 
   .left-video {
@@ -74,5 +70,11 @@
 
   .right-video {
     right: 3.88rem;
+  }
+
+  @media screen and (max-width: 5000px) {
+    .left-video, .right-video {
+      display: none;
+    }
   }
 </style>

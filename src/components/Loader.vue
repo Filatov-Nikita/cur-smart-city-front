@@ -11,7 +11,7 @@
 <script setup>
   import { ref } from 'vue';
 
-  const show = ref(true || import.meta.env.PROD);
+  const show = ref(import.meta.env.PROD);
 
   function hide() {
     show.value = false;

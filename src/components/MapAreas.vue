@@ -310,9 +310,9 @@
 <style scoped>
   .map {
     position: relative;
-    width: 79.25rem;
-    height: 94.2rem;
-    background-image: url(../assets/images/map.png);
+    width: 47.3125rem;
+    height: 56.25rem;
+    background-image: url(../assets/images/map.jpg);
     background-size: cover;
   }
 </style>

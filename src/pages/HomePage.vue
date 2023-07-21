@@ -29,6 +29,7 @@
       label="Умный город"
       icon="branches-gos"
       text="Подстрочник"
+      @click.prevent="showModal = true"
     />
     <RombItem
       path="/branches/support/bashkortostan"
@@ -37,14 +38,23 @@
       text="4 579 150"
     />
   </div>
+  <Modal v-model="showModal">
+    <video class="tw-w-full tw-h-full" controls autoplay>
+      <source src="/videos/test.mp4" type="video/mp4">
+    </video>
+  </Modal>
 </template>
 
 <script setup>
   import RombItem from '../components/RombItem.vue';
+  import Modal from '../components/Modal.vue';
   import { useBreadcrumbsStore } from '../store/breadcrumbs';
+  import { ref } from 'vue';
 
   const breadStore = useBreadcrumbsStore();
   breadStore.set('Цифровой Башкортостан');
+
+  const showModal = ref(false);
 </script>
 <style scoped>
 .rows {
