@@ -1,16 +1,17 @@
 <template>
   <transition name="fade">
     <div v-show="show" class="districts-list">
-        <div class="rows">
-          <div class="cols" v-for="row in rows">
-            <DistrictItem
-              v-for="area in row"
-              :path="pathToBranch(area.id)"
-              :icon="`districts-icon_${area.id}`"
-              :name="area.name"
-            />
-          </div>
+      <div class="rows">
+        <div class="cols" v-for="row in rows">
+          <DistrictItem
+            v-for="area in row"
+            :path="pathToBranch(area.id)"
+            :icon="`districts-icon_${area.id}`"
+            :name="area.name"
+            :active="area.id === appStore.district"
+          />
         </div>
+      </div>
     </div>
   </transition>
 </template>
@@ -21,7 +22,9 @@
   import { useDistrictsStore } from '../store/districts';
   import { useBreadcrumbsStore } from '../store/breadcrumbs';
   import { useAppStore } from '../store/app';
+  import { useRoute } from 'vue-router';
 
+  const route = useRoute();
 
   const breadcrumbsStore = useBreadcrumbsStore();
   const districtsStore = useDistrictsStore();
@@ -31,7 +34,7 @@
 
   const pathToBranch = computed(() => {
     return (areaId) => {
-      if(appStore.branch === null) return '/';
+      if(appStore.branch === null || appStore.branch === 'support') return '/';
       return `/branches/${appStore.branch}/${areaId}`;
     }
   });
@@ -60,8 +63,9 @@
     appStore.showAreas = false;
   }
 
-  window.toggle = appStore.toggleAreas;
-
+  watch(route, () => {
+    hide();
+  });
 
   watch(show, (val) => {
     if(val) {

@@ -1,12 +1,12 @@
 <template>
   <div class="map">
     <svg
-      class="tw-absolute tw-inset-0 tw-z-10"
+      class="tw-absolute tw-inset-0 tw-z-10 tw-mix-blend-color-burn"
       viewBox="0 0 1395 1660"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <path :d="area.d" v-for="area in areas" :fill="getColor(area.id)"/>
+      <path :d="area.d" v-for="area in areas" :fill="getColor(area.id)" fill-opacity="0.85" />
     </svg>
   </div>
 </template>
@@ -312,7 +312,7 @@
     position: relative;
     width: 47.3125rem;
     height: 56.25rem;
-    background-image: url(../assets/images/map.jpg);
+    background-image: url(../assets/images/map.png);
     background-size: cover;
   }
 </style>

@@ -36,4 +36,55 @@
     max-width: 149.375rem;
     margin: 0 auto;
   }
+
+  .area-btn, .video-btn {
+    border-radius: 1rem;
+    border: 2px solid #10D4F3;
+    background: rgba(34, 69, 79, 0.48);
+    mix-blend-mode: hard-light;
+  }
+  .video-btn {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.25rem 2.25rem 1.25rem 1.5rem;
+  }
+
+  .area-btn {
+    padding: 1.25rem 2.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .area-btn-label, .video-btn-label {
+    font-size: 1.5rem;
+    @apply tw-text-white tw-font-medium;
+  }
+
+  .area-btn-icon, .video-btn-icon, .back-btn-icon {
+    min-width: 3rem;
+    height: 3rem;
+  }
+
+  .help-btn {
+    width: 5.5rem;
+    height: 5.5rem;
+  }
+
+  .back-btn {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #73E2F7;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1;
+    text-decoration-line: underline;
+  }
+
+  .modal-video {
+    height: calc(100vh - 6rem);
+    margin: 0 auto;
+  }
 }

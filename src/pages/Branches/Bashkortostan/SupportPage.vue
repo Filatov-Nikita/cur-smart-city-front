@@ -1,7 +1,7 @@
 <template>
   <PageContent
     :footerData="{ nextClick: next, nextTitle: zoneData.title, videoSrc: zoneData.videoSrc }"
-    :mapData="{ 1: { color: 'black' }, 2: { color: 'red' } }"
+    :mapData="zoneData.mapData"
   >
     <div class="tw-grow">
       <div class="tabs tw-mb-16">
@@ -32,10 +32,14 @@
   import TableSupportSocKom from '../../../components/Tables/Bashkorrtostan/TableSupportSocKom.vue';
   import { useBreadcrumbsStore } from '../../../store/breadcrumbs';
   import { useRoute, useRouter } from 'vue-router';
+  import Data from '../../../json/data.json';
+  import { useAppStore } from '../../../store/app';
+
 
   const route = useRoute();
   const router = useRouter();
 
+  const { getValue } = useAppStore();
   const breadcrumbsStore = useBreadcrumbsStore();
 
   breadcrumbsStore.set(
@@ -43,7 +47,7 @@
       icon: 'branches-support',
       label: 'Обращение граждан'
     },
-    'Башкортостан',
+    'Цифровой Башкортостан',
   );
 
   const zones = getZones();
@@ -78,7 +82,7 @@
   watch(zone, () => {
     breadcrumbsStore.back();
     breadcrumbsStore.append({
-      label: 'Башкортостан',
+      label: 'Цифровой Башкортостан',
       children: [
         {
           classes: zoneData.value.titleClass,
@@ -88,32 +92,195 @@
     });
   }, { immediate: true });
 
+  function getMapData(zone, color) {
+    return Data['обращения граждан']
+          .filter(area => area.zona_Municipal_districts === zone)
+          .reduce((acc, area) => {
+            acc[area.ID] = { color };
+            return acc;
+          }, {});
+  }
+
   function getZones() {
     return {
       ural: {
         title: 'Уральская зона',
         titleClass: 'tw-text-[#98CFF8]',
         videoSrc: '/videos/test.mp4',
-        tables: getUralTables()
+        tables: getUralTables(),
+        mapData: getMapData('Уральская зона', '#98CFF8'),
       },
       ug: {
         title: 'Южная зона',
         titleClass: 'tw-text-[#EA85A4]',
         videoSrc: '/videos/test.mp4',
-        tables: getUgTables()
+        tables: getUgTables(),
+        mapData: getMapData('Южная зона', '#EA85A4'),
       },
       central: {
-        title: 'Центральная',
+        title: 'Центральная зона',
         titleClass: 'tw-text-[#2FB0F8]',
         videoSrc: '/videos/test.mp4',
-        tables: getCentralTables()
+        tables: getCentralTables(),
+        mapData: getMapData('Центральная зона', '#2FB0F8'),
       },
       zapad: {
         title: 'Западная зона',
         titleClass: 'tw-text-[#32E564]',
         videoSrc: '/videos/test.mp4',
-        tables: getZapadTables()
+        tables: getZapadTables(),
+        mapData: getMapData('Западная зона', '#32E564'),
       },
+      sevZapad: {
+        title: 'Северо-Западная зона',
+        titleClass: 'tw-text-[#FF8E4F]',
+        videoSrc: '/videos/test.mp4',
+        tables: getSevZapadTables(),
+        mapData: getMapData('Северо-Западная зона', '#FF8E4F'),
+      },
+      ufa: {
+        title: 'Уфа',
+        titleClass: 'tw-text-[#FF5656]',
+        videoSrc: '/videos/test.mp4',
+        tables: getUfaTables(),
+        mapData: getMapData('Уфа', '#FF5656'),
+      },
+    }
+  }
+
+  function getSevZapadTables() {
+    return {
+      people: [
+        {
+          label: 'Количество жителей',
+          icon: 'tables-support-people-1',
+          value: getValue(1930000)
+        }
+      ],
+      citcenrb: [
+        {
+          label: 'Обращений к врачу (амбулаторно)',
+          icon: 'tables-support-citcen-1',
+          value: getValue(769614),
+        },
+        {
+          label: 'Вызов скорой помощи',
+          icon: 'tables-support-citcen-2',
+          value: getValue(2204),
+        },
+        {
+          label: 'Звонков на линию «Антиковид»',
+          icon: 'tables-support-citcen-3',
+          value: getValue(3900),
+        },
+        {
+          label: 'Обращений на тему СВО',
+          icon: 'tables-support-citcen-1',
+          value: getValue(16784),
+        },
+        {
+          label: 'Звонков «Служба по контракту»',
+          icon: 'tables-support-citcen-4',
+          value: getValue(16369),
+        },
+        {
+          label: 'Звонков на тему пособий и выплат',
+          icon: 'tables-support-citcen-5',
+          value: getValue(6480),
+        },
+      ],
+      portzab: [
+        {
+          label: 'Звонков на горячую линию',
+          icon: 'tables-support-zab-1',
+          value: getValue(20506),
+        },
+      ],
+      sockom: [
+        {
+          label: 'Обращения на портал «Забота» Помощь семьям мобилизованных',
+          icon: 'tables-support-zab-1',
+          value: getValue(4098),
+        },
+        {
+          label: 'Обращения на портал «Забота» Адресная помощь',
+          icon: 'tables-support-zab-1',
+          value: getValue(2557),
+        },
+        {
+          label: 'Обращения на портал «Забота» Консультации',
+          icon: 'tables-support-zab-1',
+          value: getValue(3286)
+        },
+      ]
+    }
+  }
+
+  function getUfaTables() {
+    return {
+      people: [
+        {
+          label: 'Количество жителей',
+          icon: 'tables-support-people-1',
+          value: getValue(1100000)
+        }
+      ],
+      citcenrb: [
+        {
+          label: 'Обращений к врачу (амбулаторно)',
+          icon: 'tables-support-citcen-1',
+          value: getValue(142883),
+        },
+        {
+          label: 'Вызов скорой помощи',
+          icon: 'tables-support-citcen-2',
+          value: getValue(758),
+        },
+        {
+          label: 'Звонков на линию «Антиковид»',
+          icon: 'tables-support-citcen-3',
+          value: getValue(1726),
+        },
+        {
+          label: 'Обращений на тему СВО',
+          icon: 'tables-support-citcen-1',
+          value: getValue(4738),
+        },
+        {
+          label: 'Звонков «Служба по контракту»',
+          icon: 'tables-support-citcen-4',
+          value: getValue(3189),
+        },
+        {
+          label: 'Звонков на тему пособий и выплат',
+          icon: 'tables-support-citcen-5',
+          value: getValue(2248),
+        },
+      ],
+      portzab: [
+        {
+          label: 'Звонков на горячую линию',
+          icon: 'tables-support-zab-1',
+          value: getValue(7074),
+        },
+      ],
+      sockom: [
+        {
+          label: 'Обращения на портал «Забота» Помощь семьям мобилизованных',
+          icon: 'tables-support-zab-1',
+          value: getValue(235),
+        },
+        {
+          label: 'Обращения на портал «Забота» Адресная помощь',
+          icon: 'tables-support-zab-1',
+          value: getValue(116),
+        },
+        {
+          label: 'Обращения на портал «Забота» Консультации',
+          icon: 'tables-support-zab-1',
+          value: getValue(502)
+        },
+      ]
     }
   }
 
@@ -123,63 +290,63 @@
         {
           label: 'Количество жителей',
           icon: 'tables-support-people-1',
-          value: '1 843 000'
+          value: getValue(1887000)
         }
       ],
       citcenrb: [
         {
           label: 'Обращений к врачу (амбулаторно)',
           icon: 'tables-support-citcen-1',
-          value: '13 958'
+          value: getValue(752459),
         },
         {
           label: 'Вызов скорой помощи',
           icon: 'tables-support-citcen-2',
-          value: '118'
+          value: getValue(2141),
         },
         {
           label: 'Звонков на линию «Антиковид»',
           icon: 'tables-support-citcen-3',
-          value: '215'
+          value: getValue(3809),
         },
         {
           label: 'Обращений на тему СВО',
           icon: 'tables-support-citcen-1',
-          value: '353'
+          value: getValue(16386),
         },
         {
           label: 'Звонков «Служба по контракту»',
           icon: 'tables-support-citcen-4',
-          value: '113'
+          value: getValue(15999),
         },
         {
           label: 'Звонков на тему пособий и выплат',
           icon: 'tables-support-citcen-5',
-          value: '225'
+          value: getValue(6220),
         },
       ],
       portzab: [
         {
           label: 'Звонков на горячую линию',
           icon: 'tables-support-zab-1',
-          value: '22 649'
+          value: getValue(19475),
         },
       ],
       sockom: [
         {
           label: 'Обращения на портал «Забота» Помощь семьям мобилизованных',
           icon: 'tables-support-zab-1',
-          value: '3 958'
+          value: getValue(3925),
         },
         {
           label: 'Обращения на портал «Забота» Адресная помощь',
           icon: 'tables-support-zab-1',
-          value: '1 186'
+          value: getValue(2429),
         },
         {
           label: 'Обращения на портал «Забота» Консультации',
           icon: 'tables-support-zab-1',
-          value: '215'
+          value: getValue(3193)
         },
       ]
     }
@@ -191,63 +358,63 @@
         {
           label: 'Количество жителей',
           icon: 'tables-support-people-1',
-          value: '1 843 00'
+          value: getValue(1745000),
         }
       ],
       citcenrb: [
         {
           label: 'Обращений к врачу (амбулаторно)',
           icon: 'tables-support-citcen-1',
-          value: '13 95'
+          value: getValue(678980),
         },
         {
           label: 'Вызов скорой помощи',
           icon: 'tables-support-citcen-2',
-          value: '11'
+          value: getValue(1940),
         },
         {
           label: 'Звонков на линию «Антиковид»',
           icon: 'tables-support-citcen-3',
-          value: '21'
+          value: getValue(3497),
         },
         {
           label: 'Обращений на тему СВО',
           icon: 'tables-support-citcen-1',
-          value: '35'
+          value: getValue(14703),
         },
         {
           label: 'Звонков «Служба по контракту»',
           icon: 'tables-support-citcen-4',
-          value: '11'
+          value: getValue(14326),
         },
         {
           label: 'Звонков на тему пособий и выплат',
           icon: 'tables-support-citcen-5',
-          value: '22'
+          value: getValue(5595),
         },
       ],
       portzab: [
         {
           label: 'Звонков на горячую линию',
           icon: 'tables-support-zab-1',
-          value: '22 64'
+          value: getValue(17552),
         },
       ],
       sockom: [
         {
           label: 'Обращения на портал «Забота» Помощь семьям мобилизованных',
           icon: 'tables-support-zab-1',
-          value: '3 95'
+          value: getValue(3548),
         },
         {
           label: 'Обращения на портал «Забота» Адресная помощь',
           icon: 'tables-support-zab-1',
-          value: '1 18'
+          value: getValue(2207),
         },
         {
           label: 'Обращения на портал «Забота» Консультации',
           icon: 'tables-support-zab-1',
-          value: '21'
+          value: getValue(2891),
         },
       ]
     }
@@ -259,63 +426,63 @@
         {
           label: 'Количество жителей',
           icon: 'tables-support-people-1',
-          value: '1 843 '
+          value: getValue(1886000),
         }
       ],
       citcenrb: [
         {
           label: 'Обращений к врачу (амбулаторно)',
           icon: 'tables-support-citcen-1',
-          value: '13'
+          value: getValue(767085),
         },
         {
           label: 'Вызов скорой помощи',
           icon: 'tables-support-citcen-2',
-          value: '18'
+          value: getValue(2241),
         },
         {
           label: 'Звонков на линию «Антиковид»',
           icon: 'tables-support-citcen-3',
-          value: '25'
+          value: getValue(3924),
         },
         {
           label: 'Обращений на тему СВО',
           icon: 'tables-support-citcen-1',
-          value: '33'
+          value: getValue(16965),
         },
         {
           label: 'Звонков «Служба по контракту»',
           icon: 'tables-support-citcen-4',
-          value: '13'
+          value: getValue(16522),
         },
         {
           label: 'Звонков на тему пособий и выплат',
           icon: 'tables-support-citcen-5',
-          value: '25'
+          value: getValue(6681),
         },
       ],
       portzab: [
         {
           label: 'Звонков на горячую линию',
           icon: 'tables-support-zab-1',
-          value: '22'
+          value: getValue(21107),
         },
       ],
       sockom: [
         {
           label: 'Обращения на портал «Забота» Помощь семьям мобилизованных',
           icon: 'tables-support-zab-1',
-          value: '398'
+          value: getValue(4029),
         },
         {
           label: 'Обращения на портал «Забота» Адресная помощь',
           icon: 'tables-support-zab-1',
-          value: '116'
+          value: getValue(2511),
         },
         {
           label: 'Обращения на портал «Забота» Консультации',
           icon: 'tables-support-zab-1',
-          value: '25'
+          value: getValue(3292),
         },
       ]
     }
@@ -327,63 +494,63 @@
         {
           label: 'Количество жителей',
           icon: 'tables-support-people-1',
-          value: '184'
+          value: getValue(1940000),
         }
       ],
       citcenrb: [
         {
           label: 'Обращений к врачу (амбулаторно)',
           icon: 'tables-support-citcen-1',
-          value: '3 958'
+          value: getValue(796153),
         },
         {
           label: 'Вызов скорой помощи',
           icon: 'tables-support-citcen-2',
-          value: '8'
+          value: getValue(2283),
         },
         {
           label: 'Звонков на линию «Антиковид»',
           icon: 'tables-support-citcen-3',
-          value: '15'
+          value: getValue(4042),
         },
         {
           label: 'Обращений на тему СВО',
           icon: 'tables-support-citcen-1',
-          value: '53'
+          value: getValue(17417),
         },
         {
           label: 'Звонков «Служба по контракту»',
           icon: 'tables-support-citcen-4',
-          value: '13'
+          value: getValue(17022),
         },
         {
           label: 'Звонков на тему пособий и выплат',
           icon: 'tables-support-citcen-5',
-          value: '2'
+          value: getValue(6829),
         },
       ],
       portzab: [
         {
           label: 'Звонков на горячую линию',
           icon: 'tables-support-zab-1',
-          value: '649'
+          value: getValue(21733),
         },
       ],
       sockom: [
         {
           label: 'Обращения на портал «Забота» Помощь семьям мобилизованных',
           icon: 'tables-support-zab-1',
-          value: '58'
+          value: getValue(4191),
         },
         {
           label: 'Обращения на портал «Забота» Адресная помощь',
           icon: 'tables-support-zab-1',
-          value: '1 861'
+          value: getValue(2591),
         },
         {
           label: 'Обращения на портал «Забота» Консультации',
           icon: 'tables-support-zab-1',
-          value: '400'
+          value: getValue(3398),
         },
       ]
     }
@@ -393,7 +560,7 @@
 .tabs {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  max-width: 53.4rem;
+  max-width: 54rem;
   gap: 1rem;
 }
 </style>

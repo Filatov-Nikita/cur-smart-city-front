@@ -1,5 +1,5 @@
 <template>
-  <PageContent :mapData="{ 1: { color: 'black' }, 2: { color: 'red' } }" :footerData="{ videoSrc: '/videos/test.mp4' }">
+  <PageContent :mapData="mapData" :footerData="{ videoSrc: '/videos/transport.mp4' }">
     <TableRoads class="tw-self-center" :cells="[
       {
         label: 'Протяженность дорог',
@@ -34,8 +34,12 @@
   import PageContent from '../../../components/PageContent.vue';
   import TableRoads from '../../../components/Tables/Bashkorrtostan/TableRoads.vue';
   import { useBreadcrumbsStore } from '../../../store/breadcrumbs';
+  import Data from '../../../json/data.json';
+  import { computed } from 'vue';
+  import { useAppStore } from '../../../store/app';
 
   const breadcrumbsStore = useBreadcrumbsStore();
+  const appStore = useAppStore();
 
   breadcrumbsStore.set(
     {
@@ -44,6 +48,16 @@
     },
     'Башкортостан'
   );
+
+  const mapData = computed(() => {
+    return Data['дороги'].reduce((acc, area) => {
+      acc[area.ID] = {};
+      if(appStore.mapColors[area.color]) {
+        acc[area.ID]['color'] = appStore.mapColors[area.color];
+      }
+      return acc;
+    }, {});
+  });
 </script>
 <style scoped>
 

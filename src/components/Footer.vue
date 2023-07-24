@@ -7,9 +7,9 @@
       <div class="back-btn-label">Назад</div>
     </button>
 
-    <button class="area-btn" @click="onClick">
+    <button class="area-btn footer-area" @click="onClick">
       <div class="area-btn-label">
-        {{  nextTitle ?? area ?? 'Выберите район' }}
+        {{  nextTitle ?? area?.name ?? 'Выберите район' }}
       </div>
       <div class="area-btn-icon">
         <svg class="tw-w-full tw-h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
@@ -26,9 +26,7 @@
           <path d="M34 23.6456L16 35L16 12L34 23.6456Z" fill="#27D0F9" stroke="#27D0F9" stroke-width="4" stroke-linecap="round"/>
         </svg>
       </div>
-      <div class="video-btn-label">
-        Смотреть видеоролик
-      </div>
+      <div class="video-btn-label">Смотреть видеоролик</div>
     </button>
 
     <div class="help-btn">
@@ -41,7 +39,7 @@
     </div>
 
     <Modal v-model="showModal">
-      <video class="tw-w-full tw-h-full" controls autoplay>
+      <video class="modal-video" controls autoplay>
         <source :src="videoSrc" type="video/mp4">
       </video>
     </Modal>
@@ -80,51 +78,8 @@
   align-items: center;
   padding: 0 2.5rem 2.5rem;
 }
-.area-btn, .video-btn {
-  border-radius: 1rem;
-  border: 2px solid #10D4F3;
-  background: rgba(34, 69, 79, 0.48);
-  mix-blend-mode: hard-light;
-}
-.video-btn {
-  width: 23.3rem;
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  padding: 1.25rem 1.5rem;
-}
 
-.area-btn {
+.footer-area {
   width: 30.18rem;
-  padding: 1.25rem 2.25rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.area-btn-label, .video-btn-label {
-  font-size: 1.5rem;
-  @apply tw-text-white tw-font-medium;
-}
-
-.area-btn-icon, .video-btn-icon, .back-btn-icon {
-  min-width: 3rem;
-  height: 3rem;
-}
-
-.help-btn {
-  width: 5.5rem;
-  height: 5.5rem;
-}
-
-.back-btn {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  color: #73E2F7;
-  font-size: 1.5rem;
-  font-weight: 500;
-  line-height: 1;
-  text-decoration-line: underline;
 }
 </style>

@@ -26,9 +26,10 @@
     />
     <RombItem
       path="/"
-      label="Умный город"
-      icon="branches-gos"
-      text="Подстрочник"
+      label="Цифровой Башкортостан"
+      icon="branches-finger"
+      text="Воспроизвести"
+      active
       @click.prevent="showModal = true"
     />
     <RombItem
@@ -39,10 +40,29 @@
     />
   </div>
   <Modal v-model="showModal">
-    <video class="tw-w-full tw-h-full" controls autoplay>
+    <video class="modal-video" controls autoplay>
       <source src="/videos/test.mp4" type="video/mp4">
     </video>
   </Modal>
+  <Modal v-model="showAbout">
+    <video class="modal-video" controls autoplay>
+      <source src="/videos/about.mp4" type="video/mp4">
+    </video>
+  </Modal>
+  <teleport to="#footer">
+    <div class="tw-pb-10 tw-pr-10">
+      <button class="video-btn tw-ml-auto" @click="showAbout = true">
+        <div class="video-btn-icon">
+          <svg class="tw-w-full tw-h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+            <path d="M34 23.6456L16 35L16 12L34 23.6456Z" fill="#27D0F9" stroke="#27D0F9" stroke-width="4" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="video-btn-label">
+          Смотреть видеоролик о ЦУР
+        </div>
+      </button>
+    </div>
+  </teleport>
 </template>
 
 <script setup>
@@ -55,6 +75,7 @@
   breadStore.set('Цифровой Башкортостан');
 
   const showModal = ref(false);
+  const showAbout = ref(false);
 </script>
 <style scoped>
 .rows {

@@ -1,34 +1,34 @@
 <template>
-  <PageContent :mapData="{ 2: { color: 'red' } }" :footerData="{ videoSrc: '/videos/test.mp4' }">
+  <PageContent :mapData="mapData" :footerData="{ videoSrc: '/videos/112.mp4' }">
     <TableSystem112 class="tw-self-center" :cells="[
       {
         label: 'Вызов пожарных',
-        value: '152',
+        value: '13 618',
         icon: 'tables-fire-1'
       },
       {
         label: 'Вызов газовой службы',
-        value: '151',
+        value: '13 952',
         icon: 'tables-fire-2'
       },
       {
         label: 'Вызов полиции',
-        value: '635',
+        value: '115 127',
         icon: 'tables-fire-3'
       },
       {
         label: 'Вызов «Антитеррор»',
-        value: '1',
+        value: '632',
         icon: 'tables-fire-4'
       },
       {
         label: 'Вызов скорой',
-        value: '1359',
+        value: '304 424',
         icon: 'tables-fire-5'
       },
       {
         label: 'Вызов МЧС',
-        value: '920',
+        value: '99 150',
         icon: 'tables-fire-1'
       },
     ]" />
@@ -39,7 +39,11 @@
   import PageContent from '../../../components/PageContent.vue';
   import TableSystem112 from '../../../components/Tables/Bashkorrtostan/TableSystem112.vue';
   import { useBreadcrumbsStore } from '../../../store/breadcrumbs';
+  import { useAppStore } from '../../../store/app';
+  import Data from '../../../json/data.json';
+  import { computed } from 'vue';
 
+  const appStore = useAppStore();
   const breadcrumbsStore = useBreadcrumbsStore();
 
   breadcrumbsStore.set(
@@ -49,6 +53,16 @@
     },
     'Башкортостан'
   );
+
+  const mapData = computed(() => {
+    return Data['Система-112'].reduce((acc, area) => {
+      acc[area.ID] = {};
+      if(appStore.mapColors[area.color]) {
+        acc[area.ID]['color'] = appStore.mapColors[area.color];
+      }
+      return acc;
+    }, {});
+  });
 </script>
 <style scoped>
 

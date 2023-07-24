@@ -74,13 +74,6 @@ export default createRouter({
       },
     },
     {
-      path: '/branches/support/:district',
-      component: () => import('../pages/Branches/Districts/SupportPage.vue'),
-      beforeEnter(to, from, next) {
-        beforeBranch('support', +to.params.district, next);
-      },
-    },
-    {
       path: '/branches/system112/:district',
       component: () => import('../pages/Branches/Districts/System112Page.vue'),
       beforeEnter(to, from, next) {

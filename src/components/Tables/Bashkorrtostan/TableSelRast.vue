@@ -41,6 +41,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  z-index: 0;
 }
 
 .label {
@@ -51,7 +52,7 @@
 }
 
 .value {
-  font-size: 7rem;
+  font-size: 6rem;
   font-weight: 700;
   line-height: 120%;
   letter-spacing: -0.25rem;

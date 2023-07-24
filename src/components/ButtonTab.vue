@@ -19,6 +19,7 @@
   padding: 1.5rem 2.25rem;
   color: #F5FDFE;
   text-align: center;
+  font-size: 1.5rem;
   font-weight: 500;
   line-height: 1;
   border: 1.5px solid #0E5E75;

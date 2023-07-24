@@ -1,9 +1,9 @@
 <template>
   <header class="header">
     <div class="header-left">
-      <div class="logo">
+      <router-link to="/" class="logo">
         <img class="tw-w-full" width="414" height="107" src="../assets/images/logo.svg" alt="logo">
-      </div>
+      </router-link>
       <Breadcrumbs />
     </div>
     <Today />

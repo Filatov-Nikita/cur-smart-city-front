@@ -24,10 +24,10 @@
 <style scoped>
 .table-building {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   row-gap: 3rem;
   column-gap: 6rem;
-  max-width: 68.3rem;
+  max-width: 47.5rem;
 }
 
 .icon {
@@ -37,6 +37,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  z-index: 0;
 }
 
 .label {

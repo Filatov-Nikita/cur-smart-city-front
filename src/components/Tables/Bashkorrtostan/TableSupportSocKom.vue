@@ -37,6 +37,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  z-index: 0;
 }
 
 .label {
