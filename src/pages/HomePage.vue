@@ -40,12 +40,12 @@
     />
   </div>
   <Modal v-model="showModal">
-    <video class="modal-video" controls autoplay>
+    <video class="modal-video" autoplay>
       <source src="/videos/cb.mp4" type="video/mp4">
     </video>
   </Modal>
   <Modal v-model="showAbout">
-    <video class="modal-video" controls autoplay>
+    <video class="modal-video" autoplay>
       <source src="/videos/about.mp4" type="video/mp4">
     </video>
   </Modal>

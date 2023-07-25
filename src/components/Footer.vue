@@ -39,7 +39,7 @@
     </div>
 
     <Modal v-model="showModal">
-      <video class="modal-video" controls autoplay>
+      <video class="modal-video" autoplay>
         <source :src="videoSrc" type="video/mp4">
       </video>
     </Modal>

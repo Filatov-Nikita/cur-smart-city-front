@@ -12,10 +12,10 @@
           Ситуационный центр Главы РБ
         </ButtonTab>
         <ButtonTab class="tw-w-full" :active="tab === 'portzab'" @click="tab = 'portzab'">
-          Портал Забота
+          Горячая линия
         </ButtonTab>
         <ButtonTab class="tw-w-full" :active="tab === 'sockom'" @click="tab = 'sockom'">
-          Социальные коммуникации
+          Портал забота
         </ButtonTab>
       </div>
       <component :is="currentTab" :cells="currentCells" />
@@ -63,11 +63,11 @@
 
   const currentTab = computed(() => tables[tab.value]);
 
-  if(!route.query.zone || !zones[route.query.zone]) router.replace({ query: { zone: 'ural' } });
+  if(!route.query.zone || !zones[route.query.zone]) router.replace({ query: { zone: 'bash' } });
 
-  const zone = computed(() => route.query.zone ?? 'ural');
+  const zone = computed(() => route.query.zone ?? 'bash');
 
-  const zoneData = computed(() => zones[zone.value] ?? zones.ural);
+  const zoneData = computed(() => zones[zone.value] ?? zones.bash);
 
   const currentCells = computed(() => zoneData.value.tables[tab.value]);
 
@@ -80,17 +80,23 @@
     router.push({ query: { zone: keys[nextI] } });
   }
 
-  watch(zone, () => {
+  watch(zone, (val) => {
     breadcrumbsStore.back();
-    breadcrumbsStore.append({
-      label: 'Цифровой Башкортостан',
-      children: [
-        {
-          classes: zoneData.value.titleClass,
-          label: zoneData.value.title,
-        }
-      ]
-    });
+
+    if(val === 'bash') {
+      breadcrumbsStore.append('Цифровой Башкортостан');
+    }
+    else {
+      breadcrumbsStore.append({
+        label: 'Цифровой Башкортостан',
+        children: [
+          {
+            classes: zoneData.value.titleClass,
+            label: zoneData.value.title,
+          }
+        ]
+      });
+    }
   }, { immediate: true });
 
   function getMapData(zone, color) {
@@ -104,6 +110,13 @@
 
   function getZones() {
     return {
+      bash: {
+        title: 'Башкортостан',
+        titleClass: 'tw-text-[#98CFF8]',
+        videoSrc: '/videos/obr.mp4',
+        tables: getBashTables(),
+        mapData: {},
+      },
       ural: {
         title: 'Уральская зона',
         titleClass: 'tw-text-[#98CFF8]',
@@ -149,13 +162,81 @@
     }
   }
 
+  function getBashTables() {
+    return {
+      people: [
+        {
+          label: 'Количество жителей',
+          icon: 'tables-support-people-1',
+          value: getValue(4100000)
+        }
+      ],
+      citcenrb: [
+        {
+          label: 'Обращений к врачу (амбулаторно)',
+          icon: 'tables-support-citcen-1',
+          value: getValue(257126),
+        },
+        {
+          label: 'Вызов скорой помощи',
+          icon: 'tables-support-citcen-2',
+          value: getValue(1043),
+        },
+        {
+          label: 'Звонков на линию «Антиковид»',
+          icon: 'tables-support-citcen-3',
+          value: getValue(2496),
+        },
+        {
+          label: 'Обращений на тему СВО',
+          icon: 'tables-support-citcen-6',
+          value: getValue(6996),
+        },
+        {
+          label: 'Звонков «Служба по контракту»',
+          icon: 'tables-support-citcen-4',
+          value: getValue(5303),
+        },
+        {
+          label: 'Звонков на тему пособий и выплат',
+          icon: 'tables-support-citcen-5',
+          value: getValue(3076),
+        },
+      ],
+      portzab: [
+        {
+          label: 'Звонков на горячую линию',
+          icon: 'tables-support-zab-1',
+          value: getValue(9827),
+        },
+      ],
+      sockom: [
+        {
+          label: 'Помощь семьям мобилизованных',
+          icon: 'tables-support-sockom-1',
+          value: getValue(723),
+        },
+        {
+          label: 'Адресная помощь',
+          icon: 'tables-support-sockom-2',
+          value: getValue(498),
+        },
+        {
+          label: 'Консультации',
+          icon: 'tables-support-sockom-3',
+          value: getValue(872)
+        },
+      ]
+    }
+  }
+
   function getSevZapadTables() {
     return {
       people: [
         {
           label: 'Количество жителей',
           icon: 'tables-support-people-1',
-          value: getValue(1930000)
+          value: getValue(301000)
         }
       ],
       citcenrb: [
@@ -199,17 +280,17 @@
       ],
       sockom: [
         {
-          label: 'Обращения на портал «Забота» Помощь семьям мобилизованных',
+          label: 'Помощь семьям мобилизованных',
           icon: 'tables-support-sockom-1',
           value: getValue(4098),
         },
         {
-          label: 'Обращения на портал «Забота» Адресная помощь',
+          label: 'Адресная помощь',
           icon: 'tables-support-sockom-2',
           value: getValue(2557),
         },
         {
-          label: 'Обращения на портал «Забота» Консультации',
+          label: 'Консультации',
           icon: 'tables-support-sockom-3',
           value: getValue(3286)
         },
@@ -267,17 +348,17 @@
       ],
       sockom: [
         {
-          label: 'Обращения на портал «Забота» Помощь семьям мобилизованных',
+          label: 'Помощь семьям мобилизованных',
           icon: 'tables-support-sockom-1',
           value: getValue(235),
         },
         {
-          label: 'Обращения на портал «Забота» Адресная помощь',
+          label: 'Адресная помощь',
           icon: 'tables-support-sockom-2',
           value: getValue(116),
         },
         {
-          label: 'Обращения на портал «Забота» Консультации',
+          label: 'Консультации',
           icon: 'tables-support-sockom-3',
           value: getValue(502)
         },
@@ -291,7 +372,7 @@
         {
           label: 'Количество жителей',
           icon: 'tables-support-people-1',
-          value: getValue(1887000)
+          value: getValue(433000)
         }
       ],
       citcenrb: [
@@ -335,17 +416,17 @@
       ],
       sockom: [
         {
-          label: 'Обращения на портал «Забота» Помощь семьям мобилизованных',
+          label: 'Помощь семьям мобилизованных',
           icon: 'tables-support-sockom-1',
           value: getValue(3925),
         },
         {
-          label: 'Обращения на портал «Забота» Адресная помощь',
+          label: 'Адресная помощь',
           icon: 'tables-support-sockom-2',
           value: getValue(2429),
         },
         {
-          label: 'Обращения на портал «Забота» Консультации',
+          label: 'Консультации',
           icon: 'tables-support-sockom-3',
           value: getValue(3193)
         },
@@ -359,7 +440,7 @@
         {
           label: 'Количество жителей',
           icon: 'tables-support-people-1',
-          value: getValue(1745000),
+          value: getValue(401000),
         }
       ],
       citcenrb: [
@@ -403,17 +484,17 @@
       ],
       sockom: [
         {
-          label: 'Обращения на портал «Забота» Помощь семьям мобилизованных',
+          label: 'Помощь семьям мобилизованных',
           icon: 'tables-support-sockom-1',
           value: getValue(3548),
         },
         {
-          label: 'Обращения на портал «Забота» Адресная помощь',
+          label: 'Адресная помощь',
           icon: 'tables-support-sockom-2',
           value: getValue(2207),
         },
         {
-          label: 'Обращения на портал «Забота» Консультации',
+          label: 'Консультации',
           icon: 'tables-support-sockom-3',
           value: getValue(2891),
         },
@@ -427,7 +508,7 @@
         {
           label: 'Количество жителей',
           icon: 'tables-support-people-1',
-          value: getValue(1886000),
+          value: getValue(525000),
         }
       ],
       citcenrb: [
@@ -471,17 +552,17 @@
       ],
       sockom: [
         {
-          label: 'Обращения на портал «Забота» Помощь семьям мобилизованных',
+          label: 'Помощь семьям мобилизованных',
           icon: 'tables-support-sockom-1',
           value: getValue(4029),
         },
         {
-          label: 'Обращения на портал «Забота» Адресная помощь',
+          label: 'Адресная помощь',
           icon: 'tables-support-sockom-2',
           value: getValue(2511),
         },
         {
-          label: 'Обращения на портал «Забота» Консультации',
+          label: 'Консультации',
           icon: 'tables-support-sockom-3',
           value: getValue(3292),
         },
@@ -495,7 +576,7 @@
         {
           label: 'Количество жителей',
           icon: 'tables-support-people-1',
-          value: getValue(1940000),
+          value: getValue(366000),
         }
       ],
       citcenrb: [
@@ -539,17 +620,17 @@
       ],
       sockom: [
         {
-          label: 'Обращения на портал «Забота» Помощь семьям мобилизованных',
+          label: 'Помощь семьям мобилизованных',
           icon: 'tables-support-sockom-1',
           value: getValue(4191),
         },
         {
-          label: 'Обращения на портал «Забота» Адресная помощь',
+          label: 'Адресная помощь',
           icon: 'tables-support-sockom-2',
           value: getValue(2591),
         },
         {
-          label: 'Обращения на портал «Забота» Консультации',
+          label: 'Консультации',
           icon: 'tables-support-sockom-3',
           value: getValue(3398),
         },
