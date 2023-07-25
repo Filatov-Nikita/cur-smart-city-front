@@ -34,7 +34,7 @@
   function setTimer() {
     timeout = setTimeout(() => {
       show.value = true;
-    }, 1000 * 60 * 3);
+    }, 1000 * 80);
   }
 </script>
 
