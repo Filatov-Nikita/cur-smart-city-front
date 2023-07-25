@@ -1,7 +1,7 @@
 <template>
   <div class="main-layout">
     <div class="left-video">
-      <VideoBlock />
+      <VideoBlock src="/videos/left.mp4" />
     </div>
 
     <div class="wrapper">
@@ -21,7 +21,7 @@
     </div>
 
     <div class="right-video">
-      <VideoBlock />
+      <VideoBlock src="/videos/right.mp4" />
     </div>
   </div>
 </template>
@@ -60,7 +60,7 @@
     top: 50%;
     transform: translateY(-50%);
     width: 86.19rem;
-    height: 48.5rem;
+    /* height: 48.5rem; */
     z-index: -1;
   }
 

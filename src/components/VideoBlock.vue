@@ -2,7 +2,7 @@
   <div class="video-block">
     <transition name="fade">
       <video v-show="show" ref="video" autoplay muted loop>
-        <source src="/videos/test.mp4" type="video/mp4">
+        <source :src="src" type="video/mp4">
       </video>
     </transition>
     <img width="958" height="247" class="logo" src="../assets/images/logo-white.svg" alt="logo">
@@ -12,8 +12,11 @@
 <script setup>
   import { ref } from 'vue';
 
+  defineProps({
+    src: String
+  });
+
   const show = ref(true);
-  // const videoRef = ref(null);
 
   let timeout;
 
@@ -44,6 +47,8 @@
   .video-block video {
     object-fit: cover;
     border-radius: 4rem;
+    width: 100%;
+    height: 100%;
   }
 
   .logo {

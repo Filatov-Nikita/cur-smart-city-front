@@ -22,7 +22,7 @@
       path="/branches/selhoz/bashkortostan"
       label="Сельское хозяйство"
       icon="branches-sel"
-      text="5 198 Га"
+      text="6 296 063 Га"
     />
     <RombItem
       path="/"
@@ -36,12 +36,12 @@
       path="/branches/support/bashkortostan"
       label="Обращение граждан"
       icon="branches-support"
-      text="4 579 150"
+      text="4 300 558"
     />
   </div>
   <Modal v-model="showModal">
     <video class="modal-video" controls autoplay>
-      <source src="/videos/test.mp4" type="video/mp4">
+      <source src="/videos/cb.mp4" type="video/mp4">
     </video>
   </Modal>
   <Modal v-model="showAbout">

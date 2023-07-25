@@ -1,7 +1,7 @@
 <template>
   <div class="map">
     <svg
-      class="tw-absolute tw-inset-0 tw-z-10 tw-mix-blend-color-burn"
+      class="tw-absolute tw-inset-0 tw-z-10"
       viewBox="0 0 1395 1660"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

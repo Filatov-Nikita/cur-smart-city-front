@@ -46,7 +46,7 @@
       {
         label: 'Сельхозугодия (Га)',
         value: '6 296 063',
-        icon: 'branches-sel'
+        icon: 'tables-sel-rast-1'
       },
       {
         label: 'Пастбища (Га)',

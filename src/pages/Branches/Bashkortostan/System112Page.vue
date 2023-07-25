@@ -29,7 +29,7 @@
       {
         label: 'Вызов МЧС',
         value: '99 150',
-        icon: 'tables-fire-1'
+        icon: 'tables-fire-6'
       },
     ]" />
   </PageContent>

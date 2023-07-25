@@ -54,7 +54,7 @@
         {
           label: 'Сельхозугодия (Га)',
           value: getValue(area.rastenya_plochad_selhozygogiy_ga),
-          icon: 'branches-sel'
+          icon: 'tables-sel-rast-1'
         },
         {
           label: 'Пастбища (Га)',

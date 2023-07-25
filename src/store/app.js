@@ -12,9 +12,9 @@ export const useAppStore = defineStore('appStore',  {
     district: null,
     showAreas: false,
     mapColors: {
-      r: '#FF7D61',
-      g: '#32E564',
-      y: '#F9B93D'
+      r: '#9D1923',
+      g: '#089742',
+      y: '#85A118'
     }
   }),
   getters: {

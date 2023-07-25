@@ -75,7 +75,8 @@
     const keys = Object.keys(zones);
     const i = keys.findIndex(item => item === zone.value);
     if(i === -1) return;
-    let nextI = Math.min(i + 1, keys.length - 1);
+    let nextI = i + 1;
+    if(nextI > keys.length - 1) nextI = 0;
     router.push({ query: { zone: keys[nextI] } });
   }
 
@@ -106,42 +107,42 @@
       ural: {
         title: 'Уральская зона',
         titleClass: 'tw-text-[#98CFF8]',
-        videoSrc: '/videos/test.mp4',
+        videoSrc: '/videos/obr.mp4',
         tables: getUralTables(),
-        mapData: getMapData('Уральская зона', '#98CFF8'),
+        mapData: getMapData('Уральская зона', '#94CCF5'),
       },
       ug: {
         title: 'Южная зона',
         titleClass: 'tw-text-[#EA85A4]',
-        videoSrc: '/videos/test.mp4',
+        videoSrc: '/videos/obr.mp4',
         tables: getUgTables(),
-        mapData: getMapData('Южная зона', '#EA85A4'),
+        mapData: getMapData('Южная зона', '#F36792'),
       },
       central: {
         title: 'Центральная зона',
         titleClass: 'tw-text-[#2FB0F8]',
-        videoSrc: '/videos/test.mp4',
+        videoSrc: '/videos/obr.mp4',
         tables: getCentralTables(),
-        mapData: getMapData('Центральная зона', '#2FB0F8'),
+        mapData: getMapData('Центральная зона', '#27B1FE'),
       },
       zapad: {
         title: 'Западная зона',
         titleClass: 'tw-text-[#32E564]',
-        videoSrc: '/videos/test.mp4',
+        videoSrc: '/videos/obr.mp4',
         tables: getZapadTables(),
-        mapData: getMapData('Западная зона', '#32E564'),
+        mapData: getMapData('Западная зона', '#1CCF4E'),
       },
       sevZapad: {
         title: 'Северо-Западная зона',
         titleClass: 'tw-text-[#FF8E4F]',
-        videoSrc: '/videos/test.mp4',
+        videoSrc: '/videos/obr.mp4',
         tables: getSevZapadTables(),
         mapData: getMapData('Северо-Западная зона', '#FF8E4F'),
       },
       ufa: {
         title: 'Уфа',
         titleClass: 'tw-text-[#FF5656]',
-        videoSrc: '/videos/test.mp4',
+        videoSrc: '/videos/obr.mp4',
         tables: getUfaTables(),
         mapData: getMapData('Уфа', '#FF5656'),
       },
@@ -175,7 +176,7 @@
         },
         {
           label: 'Обращений на тему СВО',
-          icon: 'tables-support-citcen-1',
+          icon: 'tables-support-citcen-6',
           value: getValue(16784),
         },
         {
@@ -199,17 +200,17 @@
       sockom: [
         {
           label: 'Обращения на портал «Забота» Помощь семьям мобилизованных',
-          icon: 'tables-support-zab-1',
+          icon: 'tables-support-sockom-1',
           value: getValue(4098),
         },
         {
           label: 'Обращения на портал «Забота» Адресная помощь',
-          icon: 'tables-support-zab-1',
+          icon: 'tables-support-sockom-2',
           value: getValue(2557),
         },
         {
           label: 'Обращения на портал «Забота» Консультации',
-          icon: 'tables-support-zab-1',
+          icon: 'tables-support-sockom-3',
           value: getValue(3286)
         },
       ]
@@ -243,7 +244,7 @@
         },
         {
           label: 'Обращений на тему СВО',
-          icon: 'tables-support-citcen-1',
+          icon: 'tables-support-citcen-6',
           value: getValue(4738),
         },
         {
@@ -267,17 +268,17 @@
       sockom: [
         {
           label: 'Обращения на портал «Забота» Помощь семьям мобилизованных',
-          icon: 'tables-support-zab-1',
+          icon: 'tables-support-sockom-1',
           value: getValue(235),
         },
         {
           label: 'Обращения на портал «Забота» Адресная помощь',
-          icon: 'tables-support-zab-1',
+          icon: 'tables-support-sockom-2',
           value: getValue(116),
         },
         {
           label: 'Обращения на портал «Забота» Консультации',
-          icon: 'tables-support-zab-1',
+          icon: 'tables-support-sockom-3',
           value: getValue(502)
         },
       ]
@@ -311,7 +312,7 @@
         },
         {
           label: 'Обращений на тему СВО',
-          icon: 'tables-support-citcen-1',
+          icon: 'tables-support-citcen-6',
           value: getValue(16386),
         },
         {
@@ -335,17 +336,17 @@
       sockom: [
         {
           label: 'Обращения на портал «Забота» Помощь семьям мобилизованных',
-          icon: 'tables-support-zab-1',
+          icon: 'tables-support-sockom-1',
           value: getValue(3925),
         },
         {
           label: 'Обращения на портал «Забота» Адресная помощь',
-          icon: 'tables-support-zab-1',
+          icon: 'tables-support-sockom-2',
           value: getValue(2429),
         },
         {
           label: 'Обращения на портал «Забота» Консультации',
-          icon: 'tables-support-zab-1',
+          icon: 'tables-support-sockom-3',
           value: getValue(3193)
         },
       ]
@@ -379,7 +380,7 @@
         },
         {
           label: 'Обращений на тему СВО',
-          icon: 'tables-support-citcen-1',
+          icon: 'tables-support-citcen-6',
           value: getValue(14703),
         },
         {
@@ -403,17 +404,17 @@
       sockom: [
         {
           label: 'Обращения на портал «Забота» Помощь семьям мобилизованных',
-          icon: 'tables-support-zab-1',
+          icon: 'tables-support-sockom-1',
           value: getValue(3548),
         },
         {
           label: 'Обращения на портал «Забота» Адресная помощь',
-          icon: 'tables-support-zab-1',
+          icon: 'tables-support-sockom-2',
           value: getValue(2207),
         },
         {
           label: 'Обращения на портал «Забота» Консультации',
-          icon: 'tables-support-zab-1',
+          icon: 'tables-support-sockom-3',
           value: getValue(2891),
         },
       ]
@@ -447,7 +448,7 @@
         },
         {
           label: 'Обращений на тему СВО',
-          icon: 'tables-support-citcen-1',
+          icon: 'tables-support-citcen-6',
           value: getValue(16965),
         },
         {
@@ -471,17 +472,17 @@
       sockom: [
         {
           label: 'Обращения на портал «Забота» Помощь семьям мобилизованных',
-          icon: 'tables-support-zab-1',
+          icon: 'tables-support-sockom-1',
           value: getValue(4029),
         },
         {
           label: 'Обращения на портал «Забота» Адресная помощь',
-          icon: 'tables-support-zab-1',
+          icon: 'tables-support-sockom-2',
           value: getValue(2511),
         },
         {
           label: 'Обращения на портал «Забота» Консультации',
-          icon: 'tables-support-zab-1',
+          icon: 'tables-support-sockom-3',
           value: getValue(3292),
         },
       ]
@@ -515,7 +516,7 @@
         },
         {
           label: 'Обращений на тему СВО',
-          icon: 'tables-support-citcen-1',
+          icon: 'tables-support-citcen-6',
           value: getValue(17417),
         },
         {
@@ -539,17 +540,17 @@
       sockom: [
         {
           label: 'Обращения на портал «Забота» Помощь семьям мобилизованных',
-          icon: 'tables-support-zab-1',
+          icon: 'tables-support-sockom-1',
           value: getValue(4191),
         },
         {
           label: 'Обращения на портал «Забота» Адресная помощь',
-          icon: 'tables-support-zab-1',
+          icon: 'tables-support-sockom-2',
           value: getValue(2591),
         },
         {
           label: 'Обращения на портал «Забота» Консультации',
-          icon: 'tables-support-zab-1',
+          icon: 'tables-support-sockom-3',
           value: getValue(3398),
         },
       ]

@@ -56,7 +56,7 @@
         value: getValue(area.vizov_skoraya),
       },
       {
-        icon: 'tables-fire-1',
+        icon: 'tables-fire-6',
         label: 'Вызов МЧС',
         value: getValue(area.vizov_MCS),
       },
