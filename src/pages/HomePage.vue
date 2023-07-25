@@ -19,6 +19,12 @@
       text="47 368 км"
     />
     <RombItem
+      path="/branches/gosuslugi/bashkortostan"
+      label="Госуслуги"
+      icon="branches-gos"
+      text="заявлений: 146 904"
+    />
+    <RombItem
       path="/branches/selhoz/bashkortostan"
       label="Сельское хозяйство"
       icon="branches-sel"
@@ -80,9 +86,11 @@
 <style scoped>
 .rows {
   padding-top: 5.81rem;
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  grid-template-columns: repeat(3, auto);
+  max-width: 106.25rem;
+  margin: 0 auto;
   column-gap: 2rem;
   row-gap: 1rem;
 }

@@ -1,0 +1,634 @@
+{
+  "Госуслуги": [
+    {
+      "ID": 1,
+      "Municipal_districts": "Абзелиловский район",
+      "Road_length_km": 3074,
+      "Asphalt_length_km": 15,
+      "inspect_defects_asphalt_persent": 770,
+      "Defects_asphalt_count": 1150,
+      "Amount_of_works_asphalt_percent": 793,
+      "color": "g"
+    },
+    {
+      "ID": 2,
+      "Municipal_districts": "Альшеевский район",
+      "Road_length_km": 1261,
+      "Asphalt_length_km": 10,
+      "inspect_defects_asphalt_persent": 518,
+      "Defects_asphalt_count": 72,
+      "Amount_of_works_asphalt_percent": 308,
+      "color": "y"
+    },
+    {
+      "ID": 3,
+      "Municipal_districts": "Архангельский район",
+      "Road_length_km": 807,
+      "Asphalt_length_km": 3,
+      "inspect_defects_asphalt_persent": 277,
+      "Defects_asphalt_count": 190,
+      "Amount_of_works_asphalt_percent": 33,
+      "color": "r"
+    },
+    {
+      "ID": 4,
+      "Municipal_districts": "Аскинский район",
+      "Road_length_km": 718,
+      "Asphalt_length_km": 5,
+      "inspect_defects_asphalt_persent": 182,
+      "Defects_asphalt_count": 141,
+      "Amount_of_works_asphalt_percent": 5,
+      "color": "r"
+    },
+    {
+      "ID": 5,
+      "Municipal_districts": "Аургазинский район",
+      "Road_length_km": 1316,
+      "Asphalt_length_km": 22,
+      "inspect_defects_asphalt_persent": 309,
+      "Defects_asphalt_count": 123,
+      "Amount_of_works_asphalt_percent": 100,
+      "color": "y"
+    },
+    {
+      "ID": 6,
+      "Municipal_districts": "Баймакский район",
+      "Road_length_km": 687,
+      "Asphalt_length_km": 45,
+      "inspect_defects_asphalt_persent": 290,
+      "Defects_asphalt_count": 77,
+      "Amount_of_works_asphalt_percent": 29,
+      "color": "r"
+    },
+    {
+      "ID": 7,
+      "Municipal_districts": "Бакалинский район",
+      "Road_length_km": 820,
+      "Asphalt_length_km": 7,
+      "inspect_defects_asphalt_persent": 243,
+      "Defects_asphalt_count": 198,
+      "Amount_of_works_asphalt_percent": 228,
+      "color": "r"
+    },
+    {
+      "ID": 8,
+      "Municipal_districts": "Балтачевский район",
+      "Road_length_km": 957,
+      "Asphalt_length_km": 1,
+      "inspect_defects_asphalt_persent": 212,
+      "Defects_asphalt_count": 17,
+      "Amount_of_works_asphalt_percent": 89,
+      "color": "r"
+    },
+    {
+      "ID": 9,
+      "Municipal_districts": "Белебеевский район",
+      "Road_length_km": 2228,
+      "Asphalt_length_km": 17,
+      "inspect_defects_asphalt_persent": 1060,
+      "Defects_asphalt_count": 191,
+      "Amount_of_works_asphalt_percent": 562,
+      "color": "y"
+    },
+    {
+      "ID": 10,
+      "Municipal_districts": "Белокатайский район",
+      "Road_length_km": 684,
+      "Asphalt_length_km": 0,
+      "inspect_defects_asphalt_persent": 135,
+      "Defects_asphalt_count": 85,
+      "Amount_of_works_asphalt_percent": 338,
+      "color": "r"
+    },
+    {
+      "ID": 11,
+      "Municipal_districts": "Белорецкий район",
+      "Road_length_km": 4020,
+      "Asphalt_length_km": 47,
+      "inspect_defects_asphalt_persent": 2475,
+      "Defects_asphalt_count": 207,
+      "Amount_of_works_asphalt_percent": 468,
+      "color": "g"
+    },
+    {
+      "ID": 12,
+      "Municipal_districts": "Бижбулякский район",
+      "Road_length_km": 882,
+      "Asphalt_length_km": 2,
+      "inspect_defects_asphalt_persent": 245,
+      "Defects_asphalt_count": 6,
+      "Amount_of_works_asphalt_percent": 448,
+      "color": "r"
+    },
+    {
+      "ID": 13,
+      "Municipal_districts": "Бирский район",
+      "Road_length_km": 2405,
+      "Asphalt_length_km": 72,
+      "inspect_defects_asphalt_persent": 923,
+      "Defects_asphalt_count": 59,
+      "Amount_of_works_asphalt_percent": 1003,
+      "color": "y"
+    },
+    {
+      "ID": 14,
+      "Municipal_districts": "Благоварский район",
+      "Road_length_km": 832,
+      "Asphalt_length_km": 7,
+      "inspect_defects_asphalt_persent": 364,
+      "Defects_asphalt_count": 147,
+      "Amount_of_works_asphalt_percent": 4,
+      "color": "r"
+    },
+    {
+      "ID": 15,
+      "Municipal_districts": "Благовещенский район",
+      "Road_length_km": 2394,
+      "Asphalt_length_km": 12,
+      "inspect_defects_asphalt_persent": 296,
+      "Defects_asphalt_count": 839,
+      "Amount_of_works_asphalt_percent": 669,
+      "color": "y"
+    },
+    {
+      "ID": 16,
+      "Municipal_districts": "Буздякский район",
+      "Road_length_km": 887,
+      "Asphalt_length_km": 24,
+      "inspect_defects_asphalt_persent": 217,
+      "Defects_asphalt_count": 0,
+      "Amount_of_works_asphalt_percent": 453,
+      "color": "r"
+    },
+    {
+      "ID": 17,
+      "Municipal_districts": "Бураевский район",
+      "Road_length_km": 596,
+      "Asphalt_length_km": 6,
+      "inspect_defects_asphalt_persent": 362,
+      "Defects_asphalt_count": 65,
+      "Amount_of_works_asphalt_percent": 0,
+      "color": "r"
+    },
+    {
+      "ID": 18,
+      "Municipal_districts": "Бурзянский район",
+      "Road_length_km": 629,
+      "Asphalt_length_km": 4,
+      "inspect_defects_asphalt_persent": 174,
+      "Defects_asphalt_count": 9,
+      "Amount_of_works_asphalt_percent": 389,
+      "color": "r"
+    },
+    {
+      "ID": 19,
+      "Municipal_districts": "Гафурийский район",
+      "Road_length_km": 1529,
+      "Asphalt_length_km": 6,
+      "inspect_defects_asphalt_persent": 347,
+      "Defects_asphalt_count": 282,
+      "Amount_of_works_asphalt_percent": 127,
+      "color": "y"
+    },
+    {
+      "ID": 20,
+      "Municipal_districts": "Давлекановский район",
+      "Road_length_km": 1583,
+      "Asphalt_length_km": 26,
+      "inspect_defects_asphalt_persent": 697,
+      "Defects_asphalt_count": 52,
+      "Amount_of_works_asphalt_percent": 107,
+      "color": "y"
+    },
+    {
+      "ID": 21,
+      "Municipal_districts": "Дуванский район ",
+      "Road_length_km": 1126,
+      "Asphalt_length_km": 1,
+      "inspect_defects_asphalt_persent": 298,
+      "Defects_asphalt_count": 375,
+      "Amount_of_works_asphalt_percent": 162,
+      "color": "y"
+    },
+    {
+      "ID": 22,
+      "Municipal_districts": "Дюртюлинский район ",
+      "Road_length_km": 2960,
+      "Asphalt_length_km": 32,
+      "inspect_defects_asphalt_persent": 964,
+      "Defects_asphalt_count": 535,
+      "Amount_of_works_asphalt_percent": 900,
+      "color": "y"
+    },
+    {
+      "ID": 23,
+      "Municipal_districts": "Ермекеевский район ",
+      "Road_length_km": 635,
+      "Asphalt_length_km": 4,
+      "inspect_defects_asphalt_persent": 200,
+      "Defects_asphalt_count": 9,
+      "Amount_of_works_asphalt_percent": 103,
+      "color": "r"
+    },
+    {
+      "ID": 24,
+      "Municipal_districts": "Зианчуринский район",
+      "Road_length_km": 135,
+      "Asphalt_length_km": 0,
+      "inspect_defects_asphalt_persent": 55,
+      "Defects_asphalt_count": 0,
+      "Amount_of_works_asphalt_percent": 80,
+      "color": "r"
+    },
+    {
+      "ID": 25,
+      "Municipal_districts": "Зилаирский район ",
+      "Road_length_km": 1173,
+      "Asphalt_length_km": 51,
+      "inspect_defects_asphalt_persent": 88,
+      "Defects_asphalt_count": 179,
+      "Amount_of_works_asphalt_percent": 727,
+      "color": "y"
+    },
+    {
+      "ID": 26,
+      "Municipal_districts": "Иглинский район",
+      "Road_length_km": 3630,
+      "Asphalt_length_km": 3,
+      "inspect_defects_asphalt_persent": 706,
+      "Defects_asphalt_count": 1459,
+      "Amount_of_works_asphalt_percent": 412,
+      "color": "g"
+    },
+    {
+      "ID": 27,
+      "Municipal_districts": "Илишевский район ",
+      "Road_length_km": 1256,
+      "Asphalt_length_km": 2,
+      "inspect_defects_asphalt_persent": 498,
+      "Defects_asphalt_count": 33,
+      "Amount_of_works_asphalt_percent": 443,
+      "color": "y"
+    },
+    {
+      "ID": 28,
+      "Municipal_districts": "Ишимбайский район ",
+      "Road_length_km": 3727,
+      "Asphalt_length_km": 9,
+      "inspect_defects_asphalt_persent": 1688,
+      "Defects_asphalt_count": 153,
+      "Amount_of_works_asphalt_percent": 528,
+      "color": "g"
+    },
+    {
+      "ID": 29,
+      "Municipal_districts": "Калтасинский район ",
+      "Road_length_km": 699,
+      "Asphalt_length_km": 0,
+      "inspect_defects_asphalt_persent": 292,
+      "Defects_asphalt_count": 111,
+      "Amount_of_works_asphalt_percent": 20,
+      "color": "r"
+    },
+    {
+      "ID": 30,
+      "Municipal_districts": "Караидельский район",
+      "Road_length_km": 1136,
+      "Asphalt_length_km": 0,
+      "inspect_defects_asphalt_persent": 458,
+      "Defects_asphalt_count": 300,
+      "Amount_of_works_asphalt_percent": 272,
+      "color": "y"
+    },
+    {
+      "ID": 31,
+      "Municipal_districts": "Кармаскалинский район ",
+      "Road_length_km": 1708,
+      "Asphalt_length_km": 62,
+      "inspect_defects_asphalt_persent": 1068,
+      "Defects_asphalt_count": 350,
+      "Amount_of_works_asphalt_percent": 110,
+      "color": "y"
+    },
+    {
+      "ID": 32,
+      "Municipal_districts": "Кигинский район ",
+      "Road_length_km": 423,
+      "Asphalt_length_km": 5,
+      "inspect_defects_asphalt_persent": 173,
+      "Defects_asphalt_count": 22,
+      "Amount_of_works_asphalt_percent": 103,
+      "color": "r"
+    },
+    {
+      "ID": 33,
+      "Municipal_districts": "Краснокамский район ",
+      "Road_length_km": 1006,
+      "Asphalt_length_km": 2,
+      "inspect_defects_asphalt_persent": 315,
+      "Defects_asphalt_count": 11,
+      "Amount_of_works_asphalt_percent": 395,
+      "color": "y"
+    },
+    {
+      "ID": 34,
+      "Municipal_districts": "Кугарчинский район ",
+      "Road_length_km": 1087,
+      "Asphalt_length_km": 42,
+      "inspect_defects_asphalt_persent": 473,
+      "Defects_asphalt_count": 80,
+      "Amount_of_works_asphalt_percent": 379,
+      "color": "y"
+    },
+    {
+      "ID": 35,
+      "Municipal_districts": "Кушнаренковский район",
+      "Road_length_km": 585,
+      "Asphalt_length_km": 2,
+      "inspect_defects_asphalt_persent": 346,
+      "Defects_asphalt_count": 61,
+      "Amount_of_works_asphalt_percent": 0,
+      "color": "r"
+    },
+    {
+      "ID": 36,
+      "Municipal_districts": "Куюргазинский район ",
+      "Road_length_km": 989,
+      "Asphalt_length_km": 105,
+      "inspect_defects_asphalt_persent": 306,
+      "Defects_asphalt_count": 25,
+      "Amount_of_works_asphalt_percent": 449,
+      "color": "r"
+    },
+    {
+      "ID": 37,
+      "Municipal_districts": "Мелеузовский район",
+      "Road_length_km": 3008,
+      "Asphalt_length_km": 225,
+      "inspect_defects_asphalt_persent": 607,
+      "Defects_asphalt_count": 294,
+      "Amount_of_works_asphalt_percent": 178,
+      "color": "g"
+    },
+    {
+      "ID": 38,
+      "Municipal_districts": "Мечетлинский район ",
+      "Road_length_km": 772,
+      "Asphalt_length_km": 0,
+      "inspect_defects_asphalt_persent": 258,
+      "Defects_asphalt_count": 160,
+      "Amount_of_works_asphalt_percent": 308,
+      "color": "r"
+    },
+    {
+      "ID": 39,
+      "Municipal_districts": "Мишкинский район ",
+      "Road_length_km": 1016,
+      "Asphalt_length_km": 0,
+      "inspect_defects_asphalt_persent": 293,
+      "Defects_asphalt_count": 7,
+      "Amount_of_works_asphalt_percent": 86,
+      "color": "y"
+    },
+    {
+      "ID": 40,
+      "Municipal_districts": "Миякинский район",
+      "Road_length_km": 1068,
+      "Asphalt_length_km": 7,
+      "inspect_defects_asphalt_persent": 130,
+      "Defects_asphalt_count": 56,
+      "Amount_of_works_asphalt_percent": 22,
+      "color": "y"
+    },
+    {
+      "ID": 41,
+      "Municipal_districts": "Нуримановский район",
+      "Road_length_km": 732,
+      "Asphalt_length_km": 38,
+      "inspect_defects_asphalt_persent": 419,
+      "Defects_asphalt_count": 57,
+      "Amount_of_works_asphalt_percent": 12,
+      "color": "r"
+    },
+    {
+      "ID": 42,
+      "Municipal_districts": "Салаватский район",
+      "Road_length_km": 1261,
+      "Asphalt_length_km": 2,
+      "inspect_defects_asphalt_persent": 439,
+      "Defects_asphalt_count": 143,
+      "Amount_of_works_asphalt_percent": 150,
+      "color": "y"
+    },
+    {
+      "ID": 43,
+      "Municipal_districts": "Стерлибашевский район",
+      "Road_length_km": 275,
+      "Asphalt_length_km": 5,
+      "inspect_defects_asphalt_persent": 133,
+      "Defects_asphalt_count": 16,
+      "Amount_of_works_asphalt_percent": 15,
+      "color": "r"
+    },
+    {
+      "ID": 44,
+      "Municipal_districts": "Стерлитамакский район",
+      "Road_length_km": 2007,
+      "Asphalt_length_km": 5,
+      "inspect_defects_asphalt_persent": 1062,
+      "Defects_asphalt_count": 299,
+      "Amount_of_works_asphalt_percent": 243,
+      "color": "y"
+    },
+    {
+      "ID": 45,
+      "Municipal_districts": "Татышлинский район",
+      "Road_length_km": 673,
+      "Asphalt_length_km": 3,
+      "inspect_defects_asphalt_persent": 602,
+      "Defects_asphalt_count": 59,
+      "Amount_of_works_asphalt_percent": 8,
+      "color": "r"
+    },
+    {
+      "ID": 46,
+      "Municipal_districts": "Туймазинский район",
+      "Road_length_km": 4983,
+      "Asphalt_length_km": 421,
+      "inspect_defects_asphalt_persent": 2507,
+      "Defects_asphalt_count": 537,
+      "Amount_of_works_asphalt_percent": 547,
+      "color": "g"
+    },
+    {
+      "ID": 47,
+      "Municipal_districts": "Уфимский район",
+      "Road_length_km": 7491,
+      "Asphalt_length_km": 43,
+      "inspect_defects_asphalt_persent": 4730,
+      "Defects_asphalt_count": 76,
+      "Amount_of_works_asphalt_percent": 1615,
+      "color": "g"
+    },
+    {
+      "ID": 48,
+      "Municipal_districts": "Учалинский район",
+      "Road_length_km": 3377,
+      "Asphalt_length_km": 50,
+      "inspect_defects_asphalt_persent": 1094,
+      "Defects_asphalt_count": 34,
+      "Amount_of_works_asphalt_percent": 1103,
+      "color": "g"
+    },
+    {
+      "ID": 49,
+      "Municipal_districts": "Фёдоровский район",
+      "Road_length_km": 373,
+      "Asphalt_length_km": 4,
+      "inspect_defects_asphalt_persent": 139,
+      "Defects_asphalt_count": 20,
+      "Amount_of_works_asphalt_percent": 157,
+      "color": "r"
+    },
+    {
+      "ID": 50,
+      "Municipal_districts": "Хайбуллинский район",
+      "Road_length_km": 489,
+      "Asphalt_length_km": 1,
+      "inspect_defects_asphalt_persent": 143,
+      "Defects_asphalt_count": 1,
+      "Amount_of_works_asphalt_percent": 311,
+      "color": "r"
+    },
+    {
+      "ID": 51,
+      "Municipal_districts": "Чекмагушевский район",
+      "Road_length_km": 1264,
+      "Asphalt_length_km": 23,
+      "inspect_defects_asphalt_persent": 367,
+      "Defects_asphalt_count": 57,
+      "Amount_of_works_asphalt_percent": 451,
+      "color": "y"
+    },
+    {
+      "ID": 52,
+      "Municipal_districts": "Чишминский район",
+      "Road_length_km": 1905,
+      "Asphalt_length_km": 49,
+      "inspect_defects_asphalt_persent": 788,
+      "Defects_asphalt_count": 61,
+      "Amount_of_works_asphalt_percent": 271,
+      "color": "y"
+    },
+    {
+      "ID": 53,
+      "Municipal_districts": "Шаранский район",
+      "Road_length_km": 645,
+      "Asphalt_length_km": 148,
+      "inspect_defects_asphalt_persent": 374,
+      "Defects_asphalt_count": 56,
+      "Amount_of_works_asphalt_percent": 18,
+      "color": "r"
+    },
+    {
+      "ID": 54,
+      "Municipal_districts": "Янаульский район",
+      "Road_length_km": 1404,
+      "Asphalt_length_km": 317,
+      "inspect_defects_asphalt_persent": 777,
+      "Defects_asphalt_count": 118,
+      "Amount_of_works_asphalt_percent": 52,
+      "color": "y"
+    },
+    {
+      "ID": 55,
+      "Municipal_districts": "Агидель г.о.",
+      "Road_length_km": 677,
+      "Asphalt_length_km": 11,
+      "inspect_defects_asphalt_persent": 79,
+      "Defects_asphalt_count": 0,
+      "Amount_of_works_asphalt_percent": 384,
+      "color": "r"
+    },
+    {
+      "ID": 56,
+      "Municipal_districts": "Кумертау г.о.",
+      "Road_length_km": 2006,
+      "Asphalt_length_km": 29,
+      "inspect_defects_asphalt_persent": 817,
+      "Defects_asphalt_count": 725,
+      "Amount_of_works_asphalt_percent": 144,
+      "color": "y"
+    },
+    {
+      "ID": 57,
+      "Municipal_districts": "Нефтекамск г.о.",
+      "Road_length_km": 5627,
+      "Asphalt_length_km": 105,
+      "inspect_defects_asphalt_persent": 2602,
+      "Defects_asphalt_count": 90,
+      "Amount_of_works_asphalt_percent": 2177,
+      "color": "g"
+    },
+    {
+      "ID": 58,
+      "Municipal_districts": "Октябрьский г.о.",
+      "Road_length_km": 7517,
+      "Asphalt_length_km": 832,
+      "inspect_defects_asphalt_persent": 1990,
+      "Defects_asphalt_count": 250,
+      "Amount_of_works_asphalt_percent": 4007,
+      "color": "g"
+    },
+    {
+      "ID": 59,
+      "Municipal_districts": "Салават г.о.",
+      "Road_length_km": 4837,
+      "Asphalt_length_km": 571,
+      "inspect_defects_asphalt_persent": 1732,
+      "Defects_asphalt_count": 533,
+      "Amount_of_works_asphalt_percent": 1209,
+      "color": "g"
+    },
+    {
+      "ID": 60,
+      "Municipal_districts": "Сибай г.о.",
+      "Road_length_km": 2948,
+      "Asphalt_length_km": 46,
+      "inspect_defects_asphalt_persent": 1156,
+      "Defects_asphalt_count": 324,
+      "Amount_of_works_asphalt_percent": 1024,
+      "color": "y"
+    },
+    {
+      "ID": 61,
+      "Municipal_districts": "Стерлитамак г.о.",
+      "Road_length_km": 8534,
+      "Asphalt_length_km": 54,
+      "inspect_defects_asphalt_persent": 4506,
+      "Defects_asphalt_count": 518,
+      "Amount_of_works_asphalt_percent": 2379,
+      "color": "g"
+    },
+    {
+      "ID": 62,
+      "Municipal_districts": "Уфа г.о.",
+      "Road_length_km": 30929,
+      "Asphalt_length_km": 1135,
+      "inspect_defects_asphalt_persent": 18612,
+      "Defects_asphalt_count": 2191,
+      "Amount_of_works_asphalt_percent": 6022,
+      "color": "g"
+    },
+    {
+      "ID": 63,
+      "Municipal_districts": "ЗАТО Межгорье",
+      "Road_length_km": 502,
+      "Asphalt_length_km": 96,
+      "inspect_defects_asphalt_persent": 172,
+      "Defects_asphalt_count": 80,
+      "Amount_of_works_asphalt_percent": 6,
+      "color": "r"
+    }
+  ]
+}

@@ -32,6 +32,13 @@ export default createRouter({
       },
     },
     {
+      path: '/branches/gosuslugi/bashkortostan',
+      component: () => import('../pages/Branches/Bashkortostan/GosuslugiPage.vue'),
+      beforeEnter(to, from, next) {
+        beforeBranch('gosuslugi', 0, next);
+      },
+    },
+    {
       path: '/branches/selhoz/bashkortostan',
       component: () => import('../pages/Branches/Bashkortostan/SelhozPage.vue'),
       beforeEnter(to, from, next) {
@@ -64,6 +71,13 @@ export default createRouter({
       component: () => import('../pages/Branches/Districts/RoadsPage.vue'),
       beforeEnter(to, from, next) {
         beforeBranch('roads', +to.params.district, next);
+      },
+    },
+    {
+      path: '/branches/gosuslugi/:district',
+      component: () => import('../pages/Branches/Districts/GosuslugiPage.vue'),
+      beforeEnter(to, from, next) {
+        beforeBranch('gosuslugi', +to.params.district, next);
       },
     },
     {
