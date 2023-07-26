@@ -32,7 +32,7 @@
     return [
       {
         icon: 'tables-build-1',
-        label: 'Заявлений на получение разрушительной документации',
+        label: 'Заявлений на получение разрешительной документации',
         value: getValue(area['kol-vo_zayavleniy']),
       },
       {

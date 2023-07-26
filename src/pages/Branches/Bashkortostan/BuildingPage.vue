@@ -2,7 +2,7 @@
   <PageContent :mapData="mapData" :footerData="{ videoSrc: '/videos/build.mp4' }">
     <TableBuilding class="tw-self-center" :cells="[
       {
-        label: 'Заявлений на получение разрушительной документации',
+        label: 'Заявлений на получение разрешительной документации',
         value: '20 079',
         icon: 'tables-build-1'
       },
