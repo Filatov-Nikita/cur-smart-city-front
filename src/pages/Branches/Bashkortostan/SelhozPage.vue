@@ -26,6 +26,8 @@
   const appStore = useAppStore();
   const breadcrumbsStore = useBreadcrumbsStore();
 
+  const getValue = appStore.getValue;
+
   breadcrumbsStore.set(
     {
       icon: 'branches-sel',
@@ -45,71 +47,61 @@
     rast: [
       {
         label: 'Сельхозугодия (Га)',
-        value: '6 296 063',
+        value: getValue(6609168),
         icon: 'tables-sel-rast-1'
       },
       {
         label: 'Пастбища (Га)',
-        value: '1 436 051',
+        value: getValue(1517068.84),
         icon: 'tables-sel-rast-2'
       },
       {
         label: 'Сенокосы (Га)',
-        value: '857 632,39',
+        value: getValue(921692.65),
         icon: 'tables-sel-rast-3'
       },
       {
         label: 'Пашни (Га)',
-        value: '3 354 619,99',
+        value: getValue(3378768.17),
         icon: 'tables-sel-rast-4'
       },
     ],
     stad: [
       {
         label: 'Молочных коров (тыс. шт)',
-        value: '121 798',
+        value: getValue(121.8),
         icon: 'tables-sel-stad-1'
       },
       {
         label: 'Надои молока (тыс. тонн)',
-        value: '384 728',
+        value: getValue(384.1),
         icon: 'tables-sel-stad-2'
       },
-      // {
-      //   label: 'Крупного рогатого скота (тыс. шт)',
-      //   value: '252',
-      //   icon: 'tables-sel-stad-3'
-      // },
-      // {
-      //   label: 'Крупного рогатого скота (тыс. шт)',
-      //   value: '125',
-      //   icon: 'tables-sel-stad-4'
-      // },
-      // {
-      //   label: 'Свиней (тыс. тонн)',
-      //   value: '234',
-      //   icon: 'tables-sel-stad-5'
-      // },
-      // {
-      //   label: 'Мелкого рогатого скота (тыс. шт)',
-      //   value: '246',
-      //   icon: 'tables-sel-stad-6'
-      // },
-      // {
-      //   label: 'Мелкого рогатого скота (тыс. шт)',
-      //   value: '242',
-      //   icon: 'tables-sel-stad-7'
-      // },
-      // {
-      //   label: 'Лошадей (тыс. тонн)',
-      //   value: '234',
-      //   icon: 'tables-sel-stad-8'
-      // },
-      // {
-      //   label: 'Птицы (тыс. шт)',
-      //   value: '314',
-      //   icon: 'tables-sel-stad-9'
-      // },
+      {
+        label: 'Крупного рогатого скота (тыс. шт)',
+        value: getValue(409.8),
+        icon: 'tables-sel-stad-3'
+      },
+      {
+        label: 'Свиней (тыс. тонн)',
+        value: getValue(562.8),
+        icon: 'tables-sel-stad-5'
+      },
+      {
+        label: 'Мелкого рогатого скота (тыс. шт)',
+        value: getValue(82),
+        icon: 'tables-sel-stad-6'
+      },
+      {
+        label: 'Лошадей (тыс. тонн)',
+        value: getValue(66.1),
+        icon: 'tables-sel-stad-8'
+      },
+      {
+        label: 'Птицы (тыс. шт)',
+        value: getValue(9097.4),
+        icon: 'tables-sel-stad-9'
+      },
     ],
   }
 
@@ -122,7 +114,7 @@
   });
 
   const mapData = computed(() => {
-    return Data['дороги'].reduce((acc, area) => {
+    return Data['сельское хоз-во'].reduce((acc, area) => {
       acc[area.ID] = {};
       if(appStore.mapColors[area.color]) {
         acc[area.ID]['color'] = appStore.mapColors[area.color];
@@ -130,7 +122,7 @@
       return acc;
     }, {});
   });
-</script>
+  </script>
 <style scoped>
 .tabs {
   display: flex;

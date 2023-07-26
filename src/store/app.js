@@ -20,7 +20,7 @@ export const useAppStore = defineStore('appStore',  {
   getters: {
     getValue() {
       return (val, after = '') => {
-        if(!val) return '-';
+        if(val === undefined || val === null) return '-';
         return [formatVal(val), after].filter(val => !!val).join(' ');
       }
     }

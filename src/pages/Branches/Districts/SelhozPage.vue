@@ -22,7 +22,7 @@
   import { useBreadcrumbsStore } from '../../../store/breadcrumbs';
   import { useAppStore } from '../../../store/app';
   import { ref, computed } from 'vue';
-  import Data from '../../../json/data.json';
+  import Data from '../../../json/sel.json';
 
   const breadcrumbsStore = useBreadcrumbsStore();
   const areaStore = useDistrictsStore();
@@ -53,22 +53,22 @@
       rast: [
         {
           label: 'Сельхозугодия (Га)',
-          value: getValue(area.rastenya_plochad_selhozygogiy_ga),
+          value: getValue(area.plochad_selhozygogiy_ga),
           icon: 'tables-sel-rast-1'
         },
         {
           label: 'Пастбища (Га)',
-          value: getValue(area.rastenya_pastbicha_ga),
+          value: getValue(area.pastbicha_ga),
           icon: 'tables-sel-rast-2'
         },
         {
           label: 'Сенокосы (Га)',
-          value: getValue(area.rastenya_senokosy_ga),
+          value: getValue(area.senokosy_ga),
           icon: 'tables-sel-rast-3'
         },
         {
           label: 'Пашни (Га)',
-          value: getValue(area.rastenya_pashnya_ga),
+          value: getValue(area.pashnya_ga),
           icon: 'tables-sel-rast-4'
         },
       ],
@@ -83,41 +83,31 @@
           value: getValue(area['stado_nadoy_moloka_tonn']),
           icon: 'tables-sel-stad-2'
         },
-        // {
-        //   label: 'Крупного рогатого скота (тыс. шт)',
-        //   value: '-',
-        //   icon: 'tables-sel-stad-3'
-        // },
-        // {
-        //   label: 'Крупного рогатого скота (тыс. шт)',
-        //   value: '-',
-        //   icon: 'tables-sel-stad-4'
-        // },
-        // {
-        //   label: 'Свиней (тыс. тонн)',
-        //   value: '-',
-        //   icon: 'tables-sel-stad-5'
-        // },
-        // {
-        //   label: 'Мелкого рогатого скота (тыс. шт)',
-        //   value: '-',
-        //   icon: 'tables-sel-stad-6'
-        // },
-        // {
-        //   label: 'Мелкого рогатого скота (тыс. шт)',
-        //   value: '-',
-        //   icon: 'tables-sel-stad-7'
-        // },
-        // {
-        //   label: 'Лошадей (тыс. тонн)',
-        //   value: '-',
-        //   icon: 'tables-sel-stad-8'
-        // },
-        // {
-        //   label: 'Птицы (тыс. шт)',
-        //   value: '-',
-        //   icon: 'tables-sel-stad-9'
-        // },
+        {
+          label: 'Крупного рогатого скота (тыс. шт)',
+          value: getValue(area['stado_KRS_kol-vo']),
+          icon: 'tables-sel-stad-3'
+        },
+        {
+          label: 'Свиней (тыс. тонн)',
+          value: getValue(area['stado_pigs_kol-vo']),
+          icon: 'tables-sel-stad-5'
+        },
+        {
+          label: 'Мелкого рогатого скота (тыс. шт)',
+          value: getValue(area['stado_MRS_kol-vo']),
+          icon: 'tables-sel-stad-6'
+        },
+        {
+          label: 'Лошадей (тыс. тонн)',
+          value: getValue(area['stado_horse_kol-vo']),
+          icon: 'tables-sel-stad-8'
+        },
+        {
+          label: 'Птицы (тыс. шт)',
+          value: getValue(area['stado_birds_kol-vo']),
+          icon: 'tables-sel-stad-9'
+        },
       ],
     }
   });
